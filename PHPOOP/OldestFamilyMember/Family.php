@@ -17,6 +17,7 @@ class Family{
     public function setMembers($members)
     {
         $this->members = $members;
+
     }
 
      function addMember($member){
