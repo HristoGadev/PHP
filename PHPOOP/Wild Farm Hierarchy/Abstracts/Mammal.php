@@ -10,6 +10,12 @@ abstract class Mammal extends Animal
 {
     private $livingRegion;
 
+    function __construct($animalName, $animalType, $animalWeight, $foodEaten,$livingRegion)
+    {
+        parent::__construct($animalName, $animalType, $animalWeight, $foodEaten);
+        $this->setLivingRegion($livingRegion);
+    }
+
     /**
      * @return mixed
      */

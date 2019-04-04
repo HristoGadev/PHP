@@ -9,10 +9,11 @@ class Cat extends Felime
      * Cat constructor.
      * @param $breed
      */
-    public function __construct($breed)
-    {
-        $this->setBreed($breed);
-    }
+   public function __construct($animalName, $animalType, $animalWeight, $foodEaten, $livingRegion,$breed)
+   {
+       parent::__construct($animalName, $animalType, $animalWeight, $foodEaten, $livingRegion);
+       $this->setBreed($breed);
+   }
 
 
     /**

@@ -5,7 +5,7 @@ abstract class Food
 {
     private $quantity;
 
-    public function __construct($quantity)
+    protected function __construct($quantity)
     {
         $this->setQuantity($quantity) ;
     }

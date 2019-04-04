@@ -12,7 +12,14 @@ abstract class Animal
     abstract function eat(Food $food);
 
 
+    function __construct( $animalName,$animalType,  $animalWeight, $foodEaten)
+    {
+        $this->animalName($animalName);
+        $this->animalType($animalType);
+        $this->animalWeight($animalWeight);
+        $this->foodEaten($foodEaten);
 
+    }
 
     /**
      * @return mixed
@@ -75,11 +82,8 @@ abstract class Animal
      */
     public function setFoodEaten($foodEaten)
     {
-        $this->foodEaten = $foodEaten;
+        $this->foodEaten += $foodEaten;
     }
 
-    function __toString()
-    {
-        return $this->makeSound();
-    }
+
 }

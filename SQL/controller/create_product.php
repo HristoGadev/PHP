@@ -1,7 +1,7 @@
 <?php
-include_once '../config/database.php';
-include_once '../objects/product.php';
-include_once '../objects/category.php';
+include_once '../config/Database.php';
+include_once '../model/Product.php';
+include_once '../model/Category.php';
 
 $database=new Database();
 $db=$database->getConnection();
@@ -12,7 +12,7 @@ include "header.html";
 
 $create_product='Create product';
 echo "<div class='right-button-margin'>";
-echo "<a href='../php_crud/index.php' class='btn btn-default pull-right'>Read Products</a>";
+echo "<a href='../php_crud/list_products.php' class='btn btn-default pull-right'>Read Products</a>";
 echo "</div>";
 include "footer.html";
 ?>

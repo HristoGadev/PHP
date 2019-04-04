@@ -8,6 +8,10 @@
 
 class Tiger extends Felime
 {
+public function __construct($animalName, $animalType, $animalWeight, $foodEaten, $livingRegion)
+{
+    parent::__construct($animalName, $animalType, $animalWeight, $foodEaten, $livingRegion);
+}
 
     function makeSound()
     {

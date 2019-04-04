@@ -1,10 +1,15 @@
 <?php
 $page_title='Read products';
 
-include_once '../views/header.html';
-include_once '../config/database.php';
-include_once '../objects/product.php';
-include_once '../objects/category.php';
+spl_autoload_register();
+
+
+
+
+include_once './views/header.html';
+include_once './config/Database.php';
+include_once './model/Product.php';
+include_once './model/Category.php';
 
 $page = isset($_GET['page']) ? $_GET['page'] : 1;
 
@@ -16,7 +21,7 @@ $from_record_num = ($records_per_page * $page) - $records_per_page;
 
 
 
-// instantiate database and objects
+// instantiate database and model
 $database = new Database();
 $db = $database->getConnection();
 
@@ -30,7 +35,7 @@ $num = $stmt->rowCount();
 
 
 echo "<div class='right-button-margin'>";
-echo "<a href='../views/create_product.php' 
+echo "<a href='create_product.php' 
          class='btn btn-default pull-right'>Create Product</a>";
 echo "</div>";
 
@@ -83,10 +88,10 @@ if($num>0){
 
     echo "</table>";
 
-$page_url="index.php";
+$page_url="list_products.php";
 $total_rows=$product->countAll();
 
-include "../views/paging.php";
+include "./views/paging.php";
 
 // paging buttons will be here
 }
@@ -98,4 +103,4 @@ else{
 
 
 
-include_once '../views/footer.html';
+include_once './views/footer.html';

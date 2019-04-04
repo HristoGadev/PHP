@@ -4,14 +4,14 @@ $id = isset($_GET['id']) ? $_GET['id'] : die('ERROR: missing ID.');
 
 // include database and object files
 include_once '../config/database.php';
-include_once '../objects/product.php';
-include_once '../objects/category.php';
+include_once '../model/product.php';
+include_once '../model/category.php';
 
 // get database connection
 $database = new Database();
 $db = $database->getConnection();
 
-// prepare objects
+// prepare model
 $product = new Product($db);
 $category = new Category($db);
 
@@ -27,7 +27,7 @@ include_once "../views/header.html";
 
 // read products button
 echo "<div class='right-button-margin'>";
-echo "<a href='../php_crud/index.php' class='btn btn-primary pull-right'>";
+echo "<a href='../controller/list_products.php' class='btn btn-primary pull-right'>";
 echo "<span class='glyphicon glyphicon-list'></span> Read Products";
 echo "</a>";
 echo "</div>";
@@ -52,7 +52,7 @@ echo "<tr>";
 echo "<td>Category</td>";
 echo "<td>";
 // display category name
-$category->id=$product->category_id;
+$category->id = $product->category_id;
 $category->readName();
 echo $category->name;
 echo "</td>";
