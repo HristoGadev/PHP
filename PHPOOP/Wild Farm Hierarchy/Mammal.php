@@ -10,9 +10,9 @@ abstract class Mammal extends Animal
 {
     private $livingRegion;
 
-    function __construct($animalName, $animalType, $animalWeight, $foodEaten,$livingRegion)
+    public function __construct($animalType, $animalName, $animalWeight,$livingRegion)
     {
-        parent::__construct($animalName, $animalType, $animalWeight, $foodEaten);
+        parent::__construct($animalType, $animalName, $animalWeight);
         $this->setLivingRegion($livingRegion);
     }
 
@@ -31,5 +31,13 @@ abstract class Mammal extends Animal
     {
         $this->livingRegion = $livingRegion;
     }
-
+    function __toString()
+    {
+        return sprintf("%s [%s, %0.f, %s, %0.f]\n",
+            $this->getAnimalType(),
+            $this->getAnimalName(),
+            $this->getAnimalWeight(),
+            $this->getLivingRegion(),
+            $this->getFoodEaten());
+    }
 }

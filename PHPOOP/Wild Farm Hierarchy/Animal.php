@@ -12,12 +12,12 @@ abstract class Animal
     abstract function eat(Food $food);
 
 
-    function __construct( $animalName,$animalType,  $animalWeight, $foodEaten)
+    function __construct( $animalType,$animalName,$animalWeight)
     {
-        $this->animalName($animalName);
-        $this->animalType($animalType);
-        $this->animalWeight($animalWeight);
-        $this->foodEaten($foodEaten);
+        $this->setAnimalName($animalName);
+        $this->setAnimalType($animalType);
+        $this->setAnimalWeight($animalWeight);
+
 
     }
 

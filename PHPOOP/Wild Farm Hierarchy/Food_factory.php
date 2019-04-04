@@ -8,7 +8,7 @@
 
 class Food_factory
 {
-    function getFood($args)
+   static function getFood($args)
     {
         $typeFood = $args[0];
         $quantity = $args[1];
@@ -19,6 +19,8 @@ class Food_factory
             case 'meat' :
                 $food=new Meat($quantity);
                 break;
+            default:
+                return null;
         }
         return $food;
     }
