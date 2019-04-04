@@ -27,7 +27,7 @@ include_once "../views/header.html";
 
 // read products button
 echo "<div class='right-button-margin'>";
-echo "<a href='../controller/list_products.php' class='btn btn-primary pull-right'>";
+echo "<a href='../controller/index.php' class='btn btn-primary pull-right'>";
 echo "<span class='glyphicon glyphicon-list'></span> Read Products";
 echo "</a>";
 echo "</div>";

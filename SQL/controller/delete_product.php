@@ -1,11 +1,13 @@
 <?php
+include_once '../config/Database.php';
+include_once '../model/Product.php';
+include_once '../model/Category.php';
+
+include_once '../views/header.html';
+include_once "../views/footer.html";
 // check if value was posted
 if($_POST){
 
-    // include database and object file
-    include_once '../config/Database.php';
-    include_once '../model/Product.php';
-    include 'footer.html';
 
     // get database connection
     $database = new Database();
@@ -28,3 +30,4 @@ if($_POST){
     }
 }
 
+?>

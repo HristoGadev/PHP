@@ -3,9 +3,6 @@ $page_title='Read products';
 
 spl_autoload_register();
 
-
-
-
 include_once './views/header.html';
 include_once './config/Database.php';
 include_once './model/Product.php';
@@ -35,7 +32,7 @@ $num = $stmt->rowCount();
 
 
 echo "<div class='right-button-margin'>";
-echo "<a href='create_product.php' 
+echo "<a href='controller/create_product.php' 
          class='btn btn-default pull-right'>Create Product</a>";
 echo "</div>";
 
@@ -71,12 +68,12 @@ if($num>0){
         echo "</a>";
 
 // edit product button
-        echo "<a href='../views/update_product.php?id={$id}' class='btn btn-info left-margin'>";
+        echo "<a href='controller/update_product.php?id={$id}' class='btn btn-info left-margin'>";
         echo "<span class='glyphicon glyphicon-edit'></span> Edit";
         echo "</a>";
 
 // delete product button
-        echo "<a delete-id='{$id}' class='btn btn-danger delete-object'>";
+        echo "<a href='controller/delete_product.php?id={$id}' class='btn btn-danger delete-object'>";
         echo "<span class='glyphicon glyphicon-remove'></span> Delete";
         echo "</a>";
 
@@ -88,7 +85,7 @@ if($num>0){
 
     echo "</table>";
 
-$page_url="list_products.php";
+$page_url="index.php";
 $total_rows=$product->countAll();
 
 include "./views/paging.php";

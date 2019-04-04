@@ -8,13 +8,13 @@ $db=$database->getConnection();
 $product=new Product($db);
 $category=new Category($db);
 
-include "header.html";
+
 
 $create_product='Create product';
 echo "<div class='right-button-margin'>";
-echo "<a href='../php_crud/list_products.php' class='btn btn-default pull-right'>Read Products</a>";
+echo "<a href='../index.php' class='btn btn-default pull-right'>Read Products</a>";
 echo "</div>";
-include "footer.html";
+include "../views/header.html";
 ?>
 <form method="post">
 
