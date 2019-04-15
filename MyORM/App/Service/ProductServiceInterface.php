@@ -14,4 +14,5 @@ use App\Data\ProductDTO;
 interface ProductServiceInterface
 {
         public function createProduct(ProductDTO $productDTO):bool;
+        public function getAll():\Generator;
 }

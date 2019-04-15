@@ -26,7 +26,7 @@ class ProductService implements ProductServiceInterface
     }
     public function getAll():\Generator
     {
-
+        return $this->productRepository->findAll();
     }
 
     public function createProduct(ProductDTO $productDTO): bool

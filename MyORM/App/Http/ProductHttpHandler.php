@@ -16,7 +16,8 @@ use App\Service\ProductServiceInterface;
 class ProductHttpHandler extends HttpHandlerAbstract
 {
     function allProducts(ProductServiceInterface $productService){
-        $this->render('products/allProducts');
+
+        $this->render('products/allProducts',$productService->getAll());
     }
     function addProduct(ProductServiceInterface $productService,$formData=[]){
 

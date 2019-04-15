@@ -13,5 +13,8 @@ use App\Data\ProductDTO;
 
 interface ProductRepositoryInterface
 {
-        public function insert(ProductDTO $productDTO):?bool;
+    public function insert(ProductDTO $productDTO): ?bool;
+
+    /** @var \Generator|ProductDTO[] */
+    public function findAll(): \Generator;
 }

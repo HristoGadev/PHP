@@ -38,4 +38,14 @@ class ProductRepository implements ProductRepositoryInterface
             );
         return true;
     }
+
+
+    /** @var \Generator|ProductDTO[] */
+    public function findAll(): \Generator
+    {
+       return $this->db->querry("SELECT id,name,price,description
+ FROM products")
+            ->execute()
+            ->fetch(ProductDTO::class);
+    }
 }
