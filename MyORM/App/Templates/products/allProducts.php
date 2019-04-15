@@ -1,5 +1,5 @@
 <?php /** @var \App\Data\ProductDTO [] $data */ ?>
-<head>
+<head >
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 </head>
@@ -23,10 +23,11 @@
             <td><?= $product->getName() ?></td>
             <td><?= $product->getPrice()?></td>
             <td><?= $product->getDescription() ?></td>
+
         </tr>
     <?php endforeach; ?>
 
     </tbody>
 </table>
 
-Go back to your <a href="">profile</a>
+Go back to your <a href="profile.php">profile</a>

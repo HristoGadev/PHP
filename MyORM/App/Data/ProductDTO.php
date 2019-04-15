@@ -15,14 +15,16 @@ class ProductDTO
     private $name;
     private $price;
     private $description;
+    private $userId;
 
 
-    public static function createProduct($name, $price, $description,$id=null)
+    public static function createProduct($name, $price, $description, $userId, $id = null)
     {
         return (new ProductDTO())
             ->setName($name)
             ->setPrice($price)
             ->setDescription($description)
+            ->setUserId($userId)
             ->setId($id);
     }
 
@@ -35,7 +37,7 @@ class ProductDTO
     }
 
 
-    public function setId($id):ProductDTO
+    public function setId($id): ProductDTO
     {
         $this->id = $id;
         return $this;
@@ -87,6 +89,20 @@ class ProductDTO
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getUserId()
+    {
+        return $this->userId;
+    }
+
+
+    public function setUserId($userId): ProductDTO
+    {
+        $this->userId = $userId;
+        return $this;
+    }
 
 
 }

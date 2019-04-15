@@ -37,4 +37,4 @@
     </table>
 </form>
 
-
+Go to products <a href="allProducts.php">All products</a>

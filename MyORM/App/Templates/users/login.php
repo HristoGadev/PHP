@@ -16,6 +16,6 @@
     <label for="remember">
         <input id="remember" type="checkbox"> Remember me
     </label>
-    <button type="submit" class="pure-button pure-button-primary">Sign in</button>
+    <button type="submit" name="login">Sign in</button>
 
 </form>

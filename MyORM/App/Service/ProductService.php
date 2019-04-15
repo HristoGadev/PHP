@@ -32,7 +32,7 @@ class ProductService implements ProductServiceInterface
     public function createProduct(ProductDTO $productDTO): bool
     {
         // TODO: check description for similar products maybe?
-
-       return $this->productRepository->insert($productDTO);
+      $userId=$_SESSION['id'];
+       return $this->productRepository->insert($productDTO, $userId);
     }
 }

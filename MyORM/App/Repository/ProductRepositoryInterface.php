@@ -10,11 +10,12 @@ namespace App\Repository;
 
 
 use App\Data\ProductDTO;
+use App\Data\UserDTO;
 
 interface ProductRepositoryInterface
 {
-    public function insert(ProductDTO $productDTO): ?bool;
+    public function insert(ProductDTO $productDTO,int $id): ?bool;
 
     /** @var \Generator|ProductDTO[] */
-    public function findAll(): \Generator;
+    public function findAll(/**UserDTO $userDTO*/): \Generator;
 }
