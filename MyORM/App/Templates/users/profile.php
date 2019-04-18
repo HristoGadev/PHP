@@ -44,4 +44,3 @@
 </form>
 
 
-You can <a href="addProducts.php">Add product</a> or see <a href="all.php">All Users</a>

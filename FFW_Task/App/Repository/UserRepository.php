@@ -19,7 +19,7 @@ class UserRepository implements UserRepositoryInterface
 
     public function __construct(DatabaseInterface $db)
     {
-        $this->db=$db;
+        $this->db = $db;
     }
 
     public function insert(UserDTO $userDTO): bool
@@ -35,9 +35,8 @@ class UserRepository implements UserRepositoryInterface
 
     public function createTable(): bool
     {
-        // TODO: Implement createTable() method.
+       // $this->db->query("CREATE TABLE IF NOT EXIST")
     }
-
 
     public function findOneByName(string $userName): ?UserDTO
     {
@@ -57,18 +56,32 @@ class UserRepository implements UserRepositoryInterface
             FROM users
             WHERE id = ?
         ")->execute([$id])
-        ->fetch(UserDTO::class)
-        ->current();
+            ->fetch(UserDTO::class)
+            ->current();
     }
 
     public function findUser(string $username): bool
     {
-      $this->db->query("
+        $this->db->query("
             SELECT username, email 
             FROM users
             WHERE username = ?
         ")->execute([$username]);
-      return true;
+        return true;
+
+    }
+
+    public function updateUser(int $id, UserDTO $userDTO): void
+    {
+        $this->db->querry("
+            UPDATE users
+            SET 
+               password = ?,
+            WHERE id = ?
+        ")->execute([
+            $userDTO->getPassword(),
+            $id
+        ]);
 
     }
 }

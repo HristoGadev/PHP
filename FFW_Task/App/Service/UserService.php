@@ -44,6 +44,7 @@ class UserService implements UserServiceInterface
     {
 
         $currentUser = $this->userRepository->findOneByName($username);
+
         if ($currentUser === null) {
             return null;
         }
@@ -67,9 +68,17 @@ class UserService implements UserServiceInterface
     public function forgottenPassword(string $username): ?UserDTO
     {
         $currentUser = $this->userRepository->findOneByName($username);
+
         if($currentUser==null){
             return null;
         }
         return $currentUser;
+    }
+
+    public function editPassword(UserDTO $userDTO): void
+    {
+
+        $this->encryptPass($userDTO);
+        $this->userRepository->updateUser($_SESSION['id'], $userDTO);
     }
 }

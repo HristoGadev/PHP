@@ -17,5 +17,6 @@ interface UserServiceInterface
         public function login(string $username,string $password):?UserDTO;
         public function currentUser():?UserDTO;
         public function forgottenPassword(string $username):?UserDTO;
+        public function editPassword(UserDTO $userDTO):void;
 
 }

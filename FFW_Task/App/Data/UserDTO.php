@@ -82,8 +82,8 @@ class UserDTO
 
     public function setPassword($password):UserDTO
     {
-        $this->password = $password;
-        return $this;
+            $this->password = $password;
+            return $this;
     }
 
 

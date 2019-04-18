@@ -9,16 +9,22 @@
 namespace App\Http;
 
 
+use App\Data\ErrorDTO;
 use App\Data\UserDTO;
 use App\Service\UserServiceInterface;
 
 
 class UserHttpHandler extends HttpHandlerAbstract
 {
-    public function forgottenPasswordByUser(UserServiceInterface $userService, $data)
+    public function forgottenPasswordByUser(UserServiceInterface $userService,$data=[])
     {
-        if (isset($data['forgot_pass'])) {
+        if (!isset($data['forgot_pass'])) {
+            var_dump($data);
+            echo "ok";
             $this->forgotPassProcess($userService, $data);
+        } else {
+            echo"failed";
+            //$this->redirect("login.php");
         }
 
     }
@@ -36,10 +42,26 @@ class UserHttpHandler extends HttpHandlerAbstract
 
     public function loginUser(UserServiceInterface $userService, $data = [])
     {
-        if (isset($formData['login'])) {
+        if (isset($data['login'])) {
+            if (!isset($_SERVER['PHP_AUTH_USER'])) {
+                header('WWW-Authenticate: Basic realm="My Realm"');
+                header('HTTP/1.0 401 Unauthorized');
+                exit;
+            } else {
+                echo "<p>Hello {$_SERVER['PHP_AUTH_USER']}. Go to your <a href='profile.php'>Profile</a> </p>";
+                echo "<p>You entered {$_SERVER['PHP_AUTH_PW']} as your password.</p>";
+                $username=$_SERVER['PHP_AUTH_USER'];
+                $password=$_SERVER['PHP_AUTH_PW'];
+                $this->loginHandlerProcess($userService,$username,$password);
+               // $currentUser=$userService->login($_SERVER['PHP_AUTH_USER'],$_SERVER['PHP_AUTH_PW']);
 
-            $this->loginHandlerProcess($userService, $data);
+            }
+
+        } else if (isset($data['forgot_password'])) {
+
+            $this->render('users/forgottenPass');
         } else {
+
             $this->render('users/login');
         }
     }
@@ -53,11 +75,10 @@ class UserHttpHandler extends HttpHandlerAbstract
             $this->render("app/error", new ErrorDTO("User already exist"));
         }
     }
-
-    private function loginHandlerProcess(UserServiceInterface $userService, array $data)
+    private function loginHandlerProcess(UserServiceInterface $userService, $username,$password)
     {
-        $currentUser = $userService->login($data['username'], $data['password']);
-
+        $currentUser = $userService->login($username, $password);
+        var_dump($currentUser);
         if ($currentUser !== null) {
             $_SESSION['id'] = $currentUser->getId();
             $this->redirect('profile.php');
@@ -81,7 +102,7 @@ class UserHttpHandler extends HttpHandlerAbstract
 
     private function forgotPassProcess(UserServiceInterface $userService, $data)
     {
-        $currentUser = $userService->forgottenPassword($data);
+        $currentUser = $userService->forgottenPassword($data['forgot_pass']);
         if ($currentUser != null) {
 
             $userEmail = $currentUser->getEmail();
@@ -98,7 +119,10 @@ class UserHttpHandler extends HttpHandlerAbstract
                 echo "Failed to Recover your password, try again";
             }
 
+            $userService->editPassword($currentUser);
 
+        } else {
+            $this->render("app/error", new ErrorDTO("Username don`t exist"));
         }
     }
 

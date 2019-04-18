@@ -2,8 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2db72721-6d43-4edb-b323-6f58c60a3f6b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../FFW_Task/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Data/UserDTO.php" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/App/Data/UserDTO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Http/UserHttpHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/App/Http/UserHttpHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/App/Repository/UserRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Repository/UserRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/App/Repository/UserRepositoryInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Service/UserService.php" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/App/Service/UserService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Service/UserServiceInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/App/Service/UserServiceInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Templates/home/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/App/Templates/home/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Templates/users/forgottenPass.php" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/App/Templates/users/forgottenPass.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Templates/users/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/App/Templates/users/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Templates/users/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/App/Templates/users/register.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../MyORM/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MyORM/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sessions/Core/TemplateInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyORM/App/Templates/users/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/../MyORM/App/Templates/users/profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,16 +41,16 @@
     <session id="-1671940449">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="26" />
+          <entry key="project.closed" value="29" />
           <entry key="project.open.time.0" value="3" />
-          <entry key="project.open.time.1" value="9" />
+          <entry key="project.open.time.1" value="10" />
           <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="3" />
-          <entry key="project.open.time.8" value="3" />
+          <entry key="project.open.time.8" value="5" />
           <entry key="project.open.time.9" value="4" />
-          <entry key="project.opened" value="26" />
+          <entry key="project.opened" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -88,11 +100,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/create_product.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="14" column="83" lean-forward="true" selection-start-line="14" selection-start-column="83" selection-end-line="14" selection-end-column="83" />
+            <state relative-caret-position="238">
+              <caret line="14" column="83" selection-start-line="14" selection-start-column="83" selection-end-line="14" selection-end-column="83" />
             </state>
           </provider>
         </entry>
@@ -124,11 +136,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/paging.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
+            <state relative-caret-position="17">
+              <caret line="5" column="33" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -163,8 +175,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/footer.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+            <state relative-caret-position="238">
+              <caret line="14" column="14" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -299,7 +311,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../FFW_Task" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -387,17 +399,20 @@
       <workItem from="1555139327196" duration="1053000" />
       <workItem from="1555150398719" duration="1050000" />
       <workItem from="1555526091008" duration="392000" />
+      <workItem from="1555592404000" duration="1210000" />
+      <workItem from="1555598836888" duration="44000" />
+      <workItem from="1555598897292" duration="251000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36085000" />
+    <option name="totallyTimeSpent" value="37590000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10604027" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.110067114" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -475,6 +490,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/controller/create_product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="83" selection-start-line="14" selection-start-column="83" selection-end-line="14" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config/Database.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -496,34 +518,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/libs/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/footer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/paging.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controller/update_product.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -538,10 +532,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/create_product.php">
+    <entry file="file://$PROJECT_DIR$/views/header.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="14" column="83" lean-forward="true" selection-start-line="14" selection-start-column="83" selection-end-line="14" selection-end-column="83" />
+        <state relative-caret-position="306">
+          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="14" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/libs/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/paging.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="5" column="33" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="33" />
         </state>
       </provider>
     </entry>

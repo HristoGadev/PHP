@@ -6,14 +6,9 @@
 <h3>LOGIN USER</h3>
 
 <form method="POST">
-    Username: <label>
-        <input type="text" name="username">
-    </label>
 
-    Password: <label>
-        <input type="password" name="password">
-    </label>
 
-    <button type="submit" name="login">Sign in</button>
+    <button type="submit" name="login">Login</button>
+    <button type="submit" name="forgot_password">Forgot Password</button>
 
 </form>
