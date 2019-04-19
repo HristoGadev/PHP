@@ -14,6 +14,7 @@ use Core\TemplateInterface;
 
 abstract class HttpHandlerAbstract
 {
+    /** @var TemplateInterface  */
     private $template;
     protected $dataBinder;
 

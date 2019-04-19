@@ -9,14 +9,24 @@
 namespace App\Service;
 
 
+use App\Data\PictureDTO;
 use App\Data\UserDTO;
 
 interface UserServiceInterface
 {
-        public function register(UserDTO $userDTO):bool;
-        public function login(string $username,string $password):?UserDTO;
-        public function currentUser():?UserDTO;
-        public function forgottenPassword(string $username):?UserDTO;
-        public function editPassword(UserDTO $userDTO):void;
+    public function register(UserDTO $userDTO): bool;
+
+    public function login(string $username, string $password): ?UserDTO;
+
+    public function currentUser(): ?UserDTO;
+
+    public function forgottenPassword(string $username): ?UserDTO;
+
+    public function editPassword(UserDTO $userDTO): void;
+
+    public function addPicture(PictureDTO $pictureDTO): bool;
+
+    public function getAll(): \Generator;
+
 
 }

@@ -9,6 +9,7 @@
 namespace App\Repository;
 
 
+use App\Data\PictureDTO;
 use App\Data\UserDTO;
 
 interface UserRepositoryInterface
@@ -18,7 +19,13 @@ interface UserRepositoryInterface
     public function insert(UserDTO $userDTO): bool;
 
     public function findOneByName(string $userName): ?UserDTO;
-    public function findOneById(int $id):?UserDTO;
-    public function findUser(string $username):bool;
-    public function updateUser(int $id,UserDTO $userDTO):void ;
+
+    public function findOneById(int $id): ?UserDTO;
+
+    public function findUser(string $username): bool;
+
+    public function updateUser(int $id, UserDTO $userDTO): void;
+
+    public function insertPicture(PictureDTO $pictureDTO,int $id): bool;
+    public function findAll():\Generator;
 }

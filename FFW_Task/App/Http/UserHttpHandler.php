@@ -10,20 +10,24 @@ namespace App\Http;
 
 
 use App\Data\ErrorDTO;
+use App\Data\PictureDTO;
 use App\Data\UserDTO;
 use App\Service\UserServiceInterface;
 
 
 class UserHttpHandler extends HttpHandlerAbstract
 {
-    public function forgottenPasswordByUser(UserServiceInterface $userService,$data=[])
+    public function allUsers(UserServiceInterface $userService){
+        $this->render('users/index',$userService->getAll()) ;
+    }
+    public function forgottenPasswordByUser(UserServiceInterface $userService, $data = [])
     {
         if (!isset($data['forgot_pass'])) {
             var_dump($data);
             echo "ok";
             $this->forgotPassProcess($userService, $data);
         } else {
-            echo"failed";
+            echo "failed";
             //$this->redirect("login.php");
         }
 
@@ -50,10 +54,9 @@ class UserHttpHandler extends HttpHandlerAbstract
             } else {
                 echo "<p>Hello {$_SERVER['PHP_AUTH_USER']}. Go to your <a href='profile.php'>Profile</a> </p>";
                 echo "<p>You entered {$_SERVER['PHP_AUTH_PW']} as your password.</p>";
-                $username=$_SERVER['PHP_AUTH_USER'];
-                $password=$_SERVER['PHP_AUTH_PW'];
-                $this->loginHandlerProcess($userService,$username,$password);
-               // $currentUser=$userService->login($_SERVER['PHP_AUTH_USER'],$_SERVER['PHP_AUTH_PW']);
+                $username = $_SERVER['PHP_AUTH_USER'];
+                $password = $_SERVER['PHP_AUTH_PW'];
+                $this->loginHandlerProcess($userService, $username, $password);
 
             }
 
@@ -69,13 +72,15 @@ class UserHttpHandler extends HttpHandlerAbstract
     private function registerUserProcess(UserServiceInterface $userService, array $data)
     {
         $user = $this->dataBinder->bind($data, UserDTO::class);
+
         if ($userService->register($user)) {
             $this->redirect('login.php');
         } else {
             $this->render("app/error", new ErrorDTO("User already exist"));
         }
     }
-    private function loginHandlerProcess(UserServiceInterface $userService, $username,$password)
+
+    private function loginHandlerProcess(UserServiceInterface $userService, $username, $password)
     {
         $currentUser = $userService->login($username, $password);
         var_dump($currentUser);
@@ -88,10 +93,29 @@ class UserHttpHandler extends HttpHandlerAbstract
         return $currentUser;
     }
 
-    public function profile(UserServiceInterface $userService)
+    public function profile(UserServiceInterface $userService, $data = [])
     {
-
         $currentUser = $userService->currentUser();
+
+        if (isset($data['insert'])) {
+
+            $name = $_FILES["image"]["name"];
+
+            $visibility= $data['optradio'];
+            print_r($visibility);
+
+            $data = ['name' => $name,
+                'visibility' => $visibility];
+
+            $picture = $this->dataBinder->bind($data, PictureDTO::class);
+            print_r($data);
+            if ($userService->addPicture($picture)) {
+                echo '<script>alert("Image Inserted into Database")</script>';
+            } else {
+                echo "Problem";
+            }
+
+        }
 
         if ($currentUser == null) {
             $this->redirect('login.php');

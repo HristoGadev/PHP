@@ -9,6 +9,7 @@
 namespace App\Service;
 
 
+use App\Data\PictureDTO;
 use App\Data\UserDTO;
 use App\Repository\UserRepositoryInterface;
 
@@ -69,7 +70,7 @@ class UserService implements UserServiceInterface
     {
         $currentUser = $this->userRepository->findOneByName($username);
 
-        if($currentUser==null){
+        if ($currentUser == null) {
             return null;
         }
         return $currentUser;
@@ -80,5 +81,22 @@ class UserService implements UserServiceInterface
 
         $this->encryptPass($userDTO);
         $this->userRepository->updateUser($_SESSION['id'], $userDTO);
+    }
+
+    public function addPicture(PictureDTO $pictureDTO): bool
+    {
+        $userId = $_SESSION['id'];
+        if ($this->userRepository->insertPicture($pictureDTO, $userId)) {
+            var_dump($pictureDTO);
+            return true;
+        } else {
+            echo "failed";
+            return false;
+        }
+    }
+
+    public function getAll(): \Generator
+    {
+        return $this->userRepository->findAll();
     }
 }

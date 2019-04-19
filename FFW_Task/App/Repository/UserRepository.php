@@ -9,6 +9,7 @@
 namespace App\Repository;
 
 
+use App\Data\PictureDTO;
 use App\Data\UserDTO;
 use Database\DatabaseInterface;
 
@@ -73,7 +74,7 @@ class UserRepository implements UserRepositoryInterface
 
     public function updateUser(int $id, UserDTO $userDTO): void
     {
-        $this->db->querry("
+        $this->db->query("
             UPDATE users
             SET 
                password = ?,
@@ -83,5 +84,28 @@ class UserRepository implements UserRepositoryInterface
             $id
         ]);
 
+    }
+
+    public function insertPicture(PictureDTO $pictureDTO,int $id): bool
+    {
+
+
+        $this->db->query("INSERT INTO images (name,visibility,userId)VALUES(?,?,?)")
+            ->execute([
+                $pictureDTO->getName(),
+                $pictureDTO->getVisibility(),
+                $id
+            ]);
+        return true;
+    }
+
+    public function findAll(): \Generator
+    {
+        return $this->db->query("
+            SELECT   username
+            FROM users
+            
+        ")->execute()
+            ->fetch(UserDTO::class);
     }
 }

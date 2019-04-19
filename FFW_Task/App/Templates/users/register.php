@@ -65,7 +65,7 @@
         <input type="text" placeholder="Enter Username" name="username" required>
 
         <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
+        <input type="password" id="pass" placeholder="Enter Password" name="psw" required>
 
         <label for="email"><b>Email</b></label>
         <input type="text" placeholder="Enter Email" name="email" required>
@@ -77,6 +77,10 @@
     <div class="container signin">
         <p>Already have an account? <a href="#">Sign in</a>.</p>
     </div>
+    <script src="verifyPass.js"></script>
+    <script>
+        checkPass();
+    </script>
 </form>
 
 
