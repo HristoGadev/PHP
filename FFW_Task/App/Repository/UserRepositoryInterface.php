@@ -30,10 +30,11 @@ interface UserRepositoryInterface
 
     public function findAll(): \Generator;
 
-
     public function getAllPicturesPublic(string $visibility, int $id = null): \Generator;
 
     public function getAllPicturesProtected(string $visibility, int $id = null): \Generator;
 
     public function getAllPictures(int $id = null): \Generator;
+
+    public function updatePicture(PictureDTO $pictureDTO, $visibility):void;
 }

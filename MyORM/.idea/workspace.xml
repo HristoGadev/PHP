@@ -3,19 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="e8bf297c-0f30-49b9-af1b-5af938dd6b1e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../FFW_Task/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Http/HttpHandlerAbstract.php" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/App/Http/HttpHandlerAbstract.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Http/UserHttpHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/App/Http/UserHttpHandler.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/App/Repository/UserRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Repository/UserRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/App/Repository/UserRepositoryInterface.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Service/UserService.php" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/App/Service/UserService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Service/UserServiceInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/App/Service/UserServiceInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Templates/home/indexs.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Templates/images/images.php" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/App/Templates/images/images.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Templates/users/forgottenPass.php" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/App/Templates/users/forgottenPass.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Templates/users/gallery.php" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/App/Templates/users/gallery.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Templates/users/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/App/Templates/users/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Templates/users/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/App/Templates/users/profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Templates/users/verifyPass.js" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/App/Templates/users/verifyPass.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FFW_Task/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e8356f73-336d-4a38-8f91-356990020fae.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e8356f73-336d-4a38-8f91-356990020fae.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FFW_Task/Config/db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/Config/db.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -118,23 +115,23 @@
     <session id="1213038365">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="26" />
-          <entry key="project.open.time.0" value="5" />
-          <entry key="project.open.time.1" value="5" />
+          <entry key="project.closed" value="28" />
+          <entry key="project.open.time.0" value="6" />
+          <entry key="project.open.time.1" value="6" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.6" value="2" />
           <entry key="project.open.time.7" value="3" />
           <entry key="project.open.time.8" value="6" />
           <entry key="project.open.time.9" value="3" />
-          <entry key="project.opened" value="27" />
+          <entry key="project.opened" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="3" />
           <entry key="ini" value="5" />
-          <entry key="php" value="332" />
+          <entry key="php" value="333" />
           <entry key="products" value="7" />
           <entry key="sql" value="9" />
           <entry key="user___fk" value="1" />
@@ -146,7 +143,7 @@
           <entry key="CSS" value="3" />
           <entry key="Database Element" value="17" />
           <entry key="Ini" value="5" />
-          <entry key="PHP" value="332" />
+          <entry key="PHP" value="333" />
           <entry key="SQL" value="5" />
           <entry key="Scratch" value="5" />
         </counts>
@@ -184,8 +181,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/App/Http/UserHttpHandler.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="73" column="73" lean-forward="true" selection-start-line="73" selection-start-column="73" selection-end-line="73" selection-end-column="73" />
+            <state relative-caret-position="1847">
+              <caret line="89" column="34" selection-start-line="89" selection-start-column="26" selection-end-line="89" selection-end-column="34" />
               <folding>
                 <element signature="e#111#133#0#PHP" expanded="true" />
               </folding>
@@ -194,14 +191,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/Repository/UserRepository.php">
+        <entry file="file://$PROJECT_DIR$/profile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="92" column="7" selection-start-line="92" selection-start-column="7" selection-end-line="97" selection-end-column="36" />
-              <folding>
-                <element signature="e#117#138#0#PHP" expanded="true" />
-                <element signature="e#1588#2151#0#PHP" />
-              </folding>
+            <state relative-caret-position="34">
+              <caret line="2" column="47" lean-forward="true" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -236,11 +229,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App/Service/UserService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="489">
+            <state relative-caret-position="623">
               <caret line="92" column="5" selection-start-line="89" selection-start-column="3" selection-end-line="92" selection-end-column="5" />
               <folding>
                 <element signature="e#1278#1471#0#PHP" />
-                <element signature="e#1478#1814#0#PHP" />
               </folding>
             </state>
           </provider>
@@ -529,17 +521,19 @@
       <workItem from="1555665113860" duration="715000" />
       <workItem from="1555677494616" duration="1494000" />
       <workItem from="1555841245074" duration="609000" />
+      <workItem from="1556020898708" duration="883000" />
+      <workItem from="1556028810830" duration="152000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112403000" />
+    <option name="totallyTimeSpent" value="113438000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20268457" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2080537" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -559,7 +553,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.13557047" />
+      <window_info anchor="right" id="Database" order="3" weight="0.13557047" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -754,13 +748,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/profile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="47" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/commonUser.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -824,6 +811,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/App/Repository/UserRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1122">
+          <caret line="92" column="7" selection-start-line="92" selection-start-column="7" selection-end-line="97" selection-end-column="36" />
+          <folding>
+            <element signature="e#117#138#0#PHP" expanded="true" />
+            <element signature="e#1588#2151#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Service/ProductService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Templates/users/all.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="29" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/App/Repository/ProductRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -859,46 +871,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/Templates/users/all.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="29" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Repository/UserRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="92" column="7" selection-start-line="92" selection-start-column="7" selection-end-line="97" selection-end-column="36" />
-          <folding>
-            <element signature="e#117#138#0#PHP" expanded="true" />
-            <element signature="e#1588#2151#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Service/ProductService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/App/Service/UserService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
+        <state relative-caret-position="623">
           <caret line="92" column="5" selection-start-line="89" selection-start-column="3" selection-end-line="92" selection-end-column="5" />
           <folding>
             <element signature="e#1278#1471#0#PHP" />
-            <element signature="e#1478#1814#0#PHP" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/profile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="47" lean-forward="true" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/App/Http/UserHttpHandler.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="73" column="73" lean-forward="true" selection-start-line="73" selection-start-column="73" selection-end-line="73" selection-end-column="73" />
+        <state relative-caret-position="1847">
+          <caret line="89" column="34" selection-start-line="89" selection-start-column="26" selection-end-line="89" selection-end-column="34" />
           <folding>
             <element signature="e#111#133#0#PHP" expanded="true" />
           </folding>

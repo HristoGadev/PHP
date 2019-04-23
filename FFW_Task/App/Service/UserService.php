@@ -56,6 +56,7 @@ class UserService implements UserServiceInterface
     public function currentUser(): ?UserDTO
     {
         if (!isset($_SESSION['id'])) {
+
             return null;
         }
         return $this->userRepository->findOneById($_SESSION['id']);
@@ -126,4 +127,14 @@ class UserService implements UserServiceInterface
     }
 
 
+    public function editPicture(PictureDTO $pictureDTO,$visibility): bool
+    {
+        if ($this->userRepository->updatePicture($pictureDTO, $visibility)) {
+
+            return true;
+        } else {
+
+            return false;
+        }
+    }
 }

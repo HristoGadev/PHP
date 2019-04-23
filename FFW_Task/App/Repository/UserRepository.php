@@ -115,7 +115,7 @@ class UserRepository implements UserRepositoryInterface
             SELECT  id,name,visibility
             FROM images
             WHERE images.visibility=?  AND userId=?
-            LIMIT 5
+            
             
         ")->execute([$visibility,$id])
             ->fetch(PictureDTO::class);
@@ -128,7 +128,7 @@ class UserRepository implements UserRepositoryInterface
             SELECT  id,name,visibility
             FROM images
             WHERE images.visibility!=?  AND userId=?
-            LIMIT 5
+            
         ")->execute([$visibility,$id])
             ->fetch(PictureDTO::class);
     }
@@ -139,8 +139,21 @@ class UserRepository implements UserRepositoryInterface
             SELECT  id,name,visibility
             FROM images
             WHERE  userId=?
-            LIMIT 5
+            
         ")->execute([$id])
             ->fetch(PictureDTO::class);
+    }
+
+    public function updatePicture(PictureDTO $pictureDTO, $visibility): void
+    {
+        $this->db->query("
+            UPDATE images
+            SET 
+              visibility= ?,
+            WHERE name = ?
+        ")->execute([
+            $visibility,
+            $pictureDTO->getName(),
+        ]);
     }
 }

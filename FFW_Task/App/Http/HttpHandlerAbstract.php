@@ -12,7 +12,7 @@ namespace App\Http;
 use Core\DataBinderInterface;
 use Core\TemplateInterface;
 
-abstract class HttpHandlerAbstract
+ class HttpHandlerAbstract
 {
     /** @var TemplateInterface  */
     private $template;

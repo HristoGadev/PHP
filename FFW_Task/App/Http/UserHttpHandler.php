@@ -17,11 +17,41 @@ use App\Service\UserServiceInterface;
 
 class UserHttpHandler extends HttpHandlerAbstract
 {
-    public function allPictures(UserServiceInterface $userService,$data=[])
+    public function allPictures(UserServiceInterface $userService, $data = [])
     {
-        $user=$_SESSION['targetName'];
+        $user = $_SESSION['targetName'];
+        $this->render('users/gallery', $userService->getPictures($user));
 
-         $this->render('users/gallery', $userService->getPictures($user));
+
+        if (isset($data['edit'])) {
+              $name='';
+              $visibility = $data['optradio'];
+
+              $data = ['name' => $name,
+             'visibility' => $visibility];
+
+              $picture = $this->dataBinder->bind($data, PictureDTO::class);
+
+             if ($userService->editPicture($picture, $visibility)) {
+              echo '<script>alert("Image successfully edited")</script>';
+              }
+        }
+        if (isset($data['submit'])) {
+            echo "Failed";
+            /**$name = '';//$_FILES["image"]["name"];
+             *
+             * $visibility = $data['optradio'];
+             *
+             * $data = ['name' => $name,
+             * 'visibility' => $visibility];
+             *
+             * $picture = $this->dataBinder->bind($data, PictureDTO::class);
+             *
+             * if ($userService->editPicture($picture, $visibility)) {
+             * echo '<script>alert("Image successfully edited")</script>';
+             * }*/
+        }
+
     }
 
     public function allUsers(UserServiceInterface $userService, $data = [])
@@ -30,11 +60,15 @@ class UserHttpHandler extends HttpHandlerAbstract
 
         if (isset($data['gallery'])) {
 
-           $user= $data['gallery'];
-           $_SESSION['targetName']=$user;
+            $user = $data['gallery'];
+            $_SESSION['targetName'] = $user;
 
-           $this->redirect('gallery.php');
-        }else if(isset($data['profile'])){
+
+            $this->redirect('gallery.php');
+        } else if (isset($data['profile'])) {
+
+            $user = $data['profile'];
+            $_SESSION['targetName'] = $user;
 
             $this->redirect('profile.php');
         }
@@ -102,6 +136,7 @@ class UserHttpHandler extends HttpHandlerAbstract
         if ($currentUser !== null) {
             $_SESSION['id'] = $currentUser->getId();
             $_SESSION['name'] = $currentUser->getUsername();
+            $_SESSION['targetName'] = $currentUser->getUsername();
 
 
             $this->redirect('profile.php');
@@ -120,21 +155,20 @@ class UserHttpHandler extends HttpHandlerAbstract
         if (isset($data['insert'])) {
 
             $name = $_FILES["image"]["name"];
+            if ($name != null) {
+                $visibility = $data['optradio'];
 
-            $visibility = $data['optradio'];
-            print_r($visibility);
 
-            $data = ['name' => $name,
-                'visibility' => $visibility];
+                $data = ['name' => $name,
+                    'visibility' => $visibility];
 
-            $picture = $this->dataBinder->bind($data, PictureDTO::class);
-
-            if ($userService->addPicture($picture)) {
-                echo '<script>alert("Image Inserted into Database")</script>';
+                $picture = $this->dataBinder->bind($data, PictureDTO::class);
+                if ($userService->addPicture($picture)) {
+                    echo '<script>alert("Image Inserted into Database")</script>';
+                }
             } else {
-                echo "Problem";
+                $this->render("app/error", new ErrorDTO("No image"));;
             }
-
         }
 
         if ($currentUser == null) {
@@ -152,7 +186,7 @@ class UserHttpHandler extends HttpHandlerAbstract
 
             $userEmail = $currentUser->getEmail();
 
-            $password = rand(999, 99999);
+            $password = rand(999, 9999999);
 
             if (mail("You@me.com", "Your Recovered Password", "Please use this password to login " . $password, "From: me@you.com")) {
                 echo "Your Password has been sent to " . $userEmail;
@@ -167,9 +201,5 @@ class UserHttpHandler extends HttpHandlerAbstract
         }
     }
 
-    private function getUser($user)
-    {
-        return $user;
-    }
 
 }

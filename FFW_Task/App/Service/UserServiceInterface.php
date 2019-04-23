@@ -30,5 +30,7 @@ interface UserServiceInterface
 
     public function getPictures(string $username):\Generator;
 
+    public function editPicture(PictureDTO $pictureDTO,$visibility):bool;
+
 
 }

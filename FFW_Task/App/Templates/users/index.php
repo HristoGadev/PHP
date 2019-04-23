@@ -129,34 +129,19 @@
         <ul id="myUL">
             <li><a><?= $user->getUsername() ?></a></li>
         </ul>
-        <button type="submit"  name="gallery" value="<?= $user->getUsername() ?>">Go to gallery</button>
-        <button type="submit"  name="profile">Go to profile</button>
+        <button type="submit" name="gallery" value="<?= $user->getUsername() ?>">Go to gallery</button>
+        <button type="submit" name="profile" value="<?= $user->getUsername() ?>">Go to profile</button>
 
     </form>
 
 <?php endforeach; ?>
-<script>
 
 
-    let arrBtn = document.querySelectorAll('button');
-    arrBtn.forEach((button)=>{
-        button.addEventListener('click', setCookie);
-
-    })
-
-    function setCookie() {
-        let user=document.getElementById("myUL li a").innerText;
-
-
-        let expires = "expires=Thu, 01 Jan 1970 00:00:00 UTC";
-        document.cookie = "username= " + user + ";"
-
-
+<div class="container signin"> <?php if (!isset($_SESSION['id'])) {
+        echo ' <p>Already have an account? <a href="login.php">Login</a>.</p>';
+        echo ' <p>If you don`t have an account? <a href="register.php">Register</a>.</p>';
     }
+    ?>
 
-
-
-</script>
-
-
+</div>
 
