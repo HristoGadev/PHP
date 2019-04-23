@@ -72,11 +72,12 @@ class UserService implements UserServiceInterface
         return $currentUser;
     }
 
-    public function editPassword(UserDTO $userDTO): void
+    public function editPassword(UserDTO $userDTO,string $password): void
     {
-
         $this->encryptPass($userDTO);
-        $this->userRepository->updateUser($_SESSION['id'], $userDTO);
+        var_dump($userDTO);
+        $this->userRepository->updateUser($userDTO->getId(),  $password);
+
     }
 
     public function addPicture(PictureDTO $pictureDTO): bool
@@ -129,6 +130,7 @@ class UserService implements UserServiceInterface
 
     public function editPicture(PictureDTO $pictureDTO,$visibility): bool
     {
+
         if ($this->userRepository->updatePicture($pictureDTO, $visibility)) {
 
             return true;

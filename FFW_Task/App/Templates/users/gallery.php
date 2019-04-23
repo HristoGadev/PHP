@@ -106,31 +106,35 @@
             ?></a>
     </div>
 </nav>
-<div style='float: left; width: 100%;'>
-    <!-- List Images -->
-    <ul id="sortable">
-        <?php foreach ($data as $image): ?>
+<form method="POST">
+    <div style='float: left; width: 100%;'>
+        <!-- List Images -->
 
-        <li class="ui-sortable-handle" id="image_'<?php echo $image->getId(); ?>'">
-            <img src="App/Templates/images/<?php echo $image->getName(); ?>">
+        <ul id="sortable">
+            <?php foreach ($data as $image): ?>
 
-            <?php if (isset($_SESSION['id'])&& $_SESSION['targetName']==$_SESSION['name'])
+                <li class="ui-sortable-handle" id="image_'<?php echo $image->getId(); ?>'">
+                    <img src="App/Templates/images/<?php echo $image->getName(); ?>">
 
-                echo '<label><input type="radio" name="optradio" value="Private">Private</label>
+                    <?php if (isset($_SESSION['id']) && $_SESSION['targetName'] == $_SESSION['name'])
+
+                        echo '<label><input type="radio" name="optradio" value="Private">Private</label>
                 <label><input type="radio" name="optradio" value="Public">Public</label>
-                <label><input type="radio" name="optradio" value="Protected">Protected</label>'?>
-
-                <button type="submit" name="edit" value="<?php echo $image->getName(); ?>">Edit</button>
-            </li>
+                <label><input type="radio" name="optradio" value="Protected">Protected</label>' ?>
+                    <button type="submit" name="edit" value="<?php echo $image->getName(); ?>">Edit</button>
+                </li>
 
             <?php endforeach; ?>
-    </ul>
-</div>
-<?php if (isset($_SESSION['id'])&& $_SESSION['targetName']===$_SESSION['name']) {
-echo '<div style="clear: both; margin-top: 20px;">
+        </ul>
+
+    </div>
+
+<?php if (isset($_SESSION['id']) && $_SESSION['targetName'] === $_SESSION['name']) {
+    echo '<div style="clear: both; margin-top: 20px;">
     <input type="submit" value="Submit" name="submit">
 </div>';
-}?>
+} ?>
+</form>
 </nav>
 
 
@@ -162,7 +166,7 @@ echo '<div style="clear: both; margin-top: 20px;">
                     alert('Save successfully.');
                 }
             });*/
-        });
+    });
     })
 
 </script>

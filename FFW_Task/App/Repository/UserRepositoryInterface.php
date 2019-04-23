@@ -24,7 +24,7 @@ interface UserRepositoryInterface
 
     public function findUser(string $username): bool;
 
-    public function updateUser(int $id, UserDTO $userDTO): void;
+    public function updateUser(int $id, string $password): void;
 
     public function insertPicture(PictureDTO $pictureDTO, int $id): bool;
 
@@ -36,5 +36,5 @@ interface UserRepositoryInterface
 
     public function getAllPictures(int $id = null): \Generator;
 
-    public function updatePicture(PictureDTO $pictureDTO, $visibility):void;
+    public function updatePicture(PictureDTO $pictureDTO, $visibility):bool;
 }

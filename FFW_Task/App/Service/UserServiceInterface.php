@@ -22,7 +22,7 @@ interface UserServiceInterface
 
     public function forgottenPassword(string $username): ?UserDTO;
 
-    public function editPassword(UserDTO $userDTO): void;
+    public function editPassword(UserDTO $userDTO,string $password): void;
 
     public function addPicture(PictureDTO $pictureDTO): bool;
 

@@ -24,32 +24,21 @@ class UserHttpHandler extends HttpHandlerAbstract
 
 
         if (isset($data['edit'])) {
-              $name='';
-              $visibility = $data['optradio'];
+            $name = $data['edit'];
 
-              $data = ['name' => $name,
-             'visibility' => $visibility];
+            $visibility = $data['optradio'];
 
-              $picture = $this->dataBinder->bind($data, PictureDTO::class);
+            $data = ['name' => $name,
+                'visibility' => $visibility];
 
-             if ($userService->editPicture($picture, $visibility)) {
-              echo '<script>alert("Image successfully edited")</script>';
-              }
+            $picture = $this->dataBinder->bind($data, PictureDTO::class);
+
+            if ($userService->editPicture($picture, $visibility)) {
+                echo '<script>alert("Image successfully edited")</script>';
+            }
         }
         if (isset($data['submit'])) {
-            echo "Failed";
-            /**$name = '';//$_FILES["image"]["name"];
-             *
-             * $visibility = $data['optradio'];
-             *
-             * $data = ['name' => $name,
-             * 'visibility' => $visibility];
-             *
-             * $picture = $this->dataBinder->bind($data, PictureDTO::class);
-             *
-             * if ($userService->editPicture($picture, $visibility)) {
-             * echo '<script>alert("Image successfully edited")</script>';
-             * }*/
+            echo 'End game';
         }
 
     }
@@ -126,7 +115,7 @@ class UserHttpHandler extends HttpHandlerAbstract
         if ($userService->register($user)) {
             $this->redirect('login.php');
         } else {
-            $this->render("app/error", new ErrorDTO("User already exist"));
+            $this->render("users/register");
         }
     }
 
@@ -135,7 +124,7 @@ class UserHttpHandler extends HttpHandlerAbstract
         $currentUser = $userService->login($username, $password);
         if ($currentUser !== null) {
             $_SESSION['id'] = $currentUser->getId();
-            $_SESSION['name'] = $currentUser->getUsername();
+
             $_SESSION['targetName'] = $currentUser->getUsername();
 
 
@@ -181,12 +170,13 @@ class UserHttpHandler extends HttpHandlerAbstract
     private function forgotPassProcess(UserServiceInterface $userService, $data)
     {
         $currentUser = $userService->forgottenPassword($data['username']);
-
+        var_dump($currentUser);
         if ($currentUser != null) {
 
             $userEmail = $currentUser->getEmail();
 
-            $password = rand(999, 9999999);
+           $password= $this->generatePassword(8);
+            var_dump($password);
 
             if (mail("You@me.com", "Your Recovered Password", "Please use this password to login " . $password, "From: me@you.com")) {
                 echo "Your Password has been sent to " . $userEmail;
@@ -194,12 +184,24 @@ class UserHttpHandler extends HttpHandlerAbstract
                 echo "Failed to Recover your password, try again";
             }
 
-            $userService->editPassword($currentUser);
+            $userService->editPassword($currentUser,$password);
 
         } else {
             $this->render("app/error", new ErrorDTO("Username don`t exist"));
         }
     }
 
+    private function generatePassword($length = 8)
+    {
+        $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        $count = mb_strlen($chars);
+
+        for ($i = 0, $result = ''; $i < $length; $i++) {
+            $index = rand(0, $count - 1);
+            $result .= mb_substr($chars, $index, 1);
+        }
+
+        return $result;
+    }
 
 }

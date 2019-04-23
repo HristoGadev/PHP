@@ -72,15 +72,14 @@ class UserRepository implements UserRepositoryInterface
 
     }
 
-    public function updateUser(int $id, UserDTO $userDTO): void
+    public function updateUser(int $id, string $password): void
     {
         $this->db->query("
-            UPDATE users
-            SET 
-               password = ?,
-            WHERE id = ?
+             UPDATE `ffw_task`.`users` 
+          SET `password`=? 
+          WHERE  `id`=?;
         ")->execute([
-            $userDTO->getPassword(),
+            $password,
             $id
         ]);
 
@@ -144,16 +143,17 @@ class UserRepository implements UserRepositoryInterface
             ->fetch(PictureDTO::class);
     }
 
-    public function updatePicture(PictureDTO $pictureDTO, $visibility): void
+    public function updatePicture(PictureDTO $pictureDTO, $visibility):bool
     {
         $this->db->query("
-            UPDATE images
-            SET 
-              visibility= ?,
-            WHERE name = ?
+          UPDATE `ffw_task`.`images` 
+          SET `visibility`=? 
+          WHERE  `name`=?;
         ")->execute([
             $visibility,
             $pictureDTO->getName(),
+
         ]);
+        return true;
     }
 }
