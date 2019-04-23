@@ -36,7 +36,7 @@ class UserRepository implements UserRepositoryInterface
 
     public function createTable(): bool
     {
-       // $this->db->query("CREATE TABLE IF NOT EXIST")
+        // $this->db->query("CREATE TABLE IF NOT EXIST")
     }
 
     public function findOneByName(string $userName): ?UserDTO
@@ -86,7 +86,7 @@ class UserRepository implements UserRepositoryInterface
 
     }
 
-    public function insertPicture(PictureDTO $pictureDTO,int $id): bool
+    public function insertPicture(PictureDTO $pictureDTO, int $id): bool
     {
 
 
@@ -107,5 +107,40 @@ class UserRepository implements UserRepositoryInterface
             
         ")->execute()
             ->fetch(UserDTO::class);
+    }
+
+    public function getAllPicturesPublic(string $visibility,int $id=null): \Generator
+    {
+        return $this->db->query("
+            SELECT  id,name,visibility
+            FROM images
+            WHERE images.visibility=?  AND userId=?
+            LIMIT 5
+            
+        ")->execute([$visibility,$id])
+            ->fetch(PictureDTO::class);
+    }
+
+
+    public function getAllPicturesProtected(string $visibility, int $id = null): \Generator
+    {
+        return $this->db->query("
+            SELECT  id,name,visibility
+            FROM images
+            WHERE images.visibility!=?  AND userId=?
+            LIMIT 5
+        ")->execute([$visibility,$id])
+            ->fetch(PictureDTO::class);
+    }
+
+    public function getAllPictures(int $id = null): \Generator
+    {
+        return $this->db->query("
+            SELECT  id,name,visibility
+            FROM images
+            WHERE  userId=?
+            LIMIT 5
+        ")->execute([$id])
+            ->fetch(PictureDTO::class);
     }
 }

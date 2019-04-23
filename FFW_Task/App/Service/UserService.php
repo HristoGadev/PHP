@@ -27,18 +27,13 @@ class UserService implements UserServiceInterface
         if ($this->userRepository->findOneByName($userDTO->getUsername()) !== null) {
             return false;
         }
-
+        if(strlen( $userDTO->getPassword())<8){
+            return false;
+        }
         $this->encryptPass($userDTO);
 
         return $this->userRepository->insert($userDTO);
 
-    }
-
-    private function encryptPass(UserDTO $userDTO)
-    {
-        $plainPass = $userDTO->getPassword();
-        $hashPass = password_hash($plainPass, PASSWORD_DEFAULT);
-        $userDTO->setPassword($hashPass);
     }
 
     public function login(string $username, string $password): ?UserDTO
@@ -87,16 +82,48 @@ class UserService implements UserServiceInterface
     {
         $userId = $_SESSION['id'];
         if ($this->userRepository->insertPicture($pictureDTO, $userId)) {
-            var_dump($pictureDTO);
+
             return true;
         } else {
-            echo "failed";
+
             return false;
         }
     }
 
     public function getAll(): \Generator
     {
+
         return $this->userRepository->findAll();
     }
+
+    public function getPictures(string $username): \Generator
+    {
+
+
+        $user = $this->userRepository->findOneByName($username);
+        $userId = $user->getId();
+
+        if ($this->currentUser()===null) {
+            $visibility = 'Public';
+            return $this->userRepository->getAllPicturesPublic($visibility, $userId);
+
+        }else if ($this->currentUser()->getUsername() === $_SESSION['targetName']){
+
+            return $this->userRepository->getAllPictures($userId);
+        }else{
+
+            $visibility = 'Private';
+            return $this->userRepository->getAllPicturesProtected($visibility, $userId);
+        }
+
+    }
+
+    private function encryptPass(UserDTO $userDTO)
+    {
+        $plainPass = $userDTO->getPassword();
+        $hashPass = password_hash($plainPass, PASSWORD_DEFAULT);
+        $userDTO->setPassword($hashPass);
+    }
+
+
 }

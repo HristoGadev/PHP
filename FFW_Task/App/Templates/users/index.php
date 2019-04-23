@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php /** @var \App\Data\UserDTO [] $data */
+?>
 <head>
-    <title>Bootstrap Example</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-</head>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 
+</head>
 
 <style>
     #myInput {
@@ -43,27 +39,124 @@
     #myUL li a:hover:not(.header) {
         background-color: #eee; /* Add a hover effect to all links, except for headers */
     }
+
+    body {
+        background-color: #A89465;
+        font-family: 'Calibri';
+    }
+
+    main table {
+        width: 100%;
+        border: 1px solid #FEAE00;
+        border-spacing: 0px;
+    }
+
+    main th, td {
+        width: 25%;
+        padding: 15px;
+        text-align: left;
+    }
+
+    main td {
+        vertical-align: bottom;
+    }
+
+    main th {
+        background-color: #feae00;
+        color: white;
+    }
+
+    main table img {
+        width: 100px;
+        height: auto;
+    }
+
+    main tr:nth-child(odd) {
+        background-color: beige;
+    }
+
+    .topnav {
+        background-color: #333;
+        overflow: hidden;
+    }
+
+    .topnav a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    .topnav a.logo {
+        padding: 0px;
+        padding-top: 4px;
+    }
+
+    .topnav a.right {
+        float: right;
+    }
+
+    .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    .topnav a.active {
+        background-color: #FEAE00;
+        color: white;
+    }
+
+    h3 {
+        color: white;
+    }
+
 </style>
+<nav>
+
+    <div class="topnav">
+        <a class="left">Users Galeries</a>
+        <a class="right"> <?php if (isset($_SESSION['id'])) {
+                echo $_SESSION['name'];
+            }
+            ?></a>
+    </div>
+</nav>
+<?php foreach ($data as $user): ?>
+    <form method="POST">
+        <ul id="myUL">
+            <li><a><?= $user->getUsername() ?></a></li>
+        </ul>
+        <button type="submit"  name="gallery" value="<?= $user->getUsername() ?>">Go to gallery</button>
+        <button type="submit"  name="profile">Go to profile</button>
+
+    </form>
+
+<?php endforeach; ?>
+<script>
+
+
+    let arrBtn = document.querySelectorAll('button');
+    arrBtn.forEach((button)=>{
+        button.addEventListener('click', setCookie);
+
+    })
+
+    function setCookie() {
+        let user=document.getElementById("myUL li a").innerText;
+
+
+        let expires = "expires=Thu, 01 Jan 1970 00:00:00 UTC";
+        document.cookie = "username= " + user + ";"
+
+
+    }
 
 
 
-<h3>Users Galeries</h3>
+</script>
 
-<ul id="myUL">
-    <li><a href="#">Adele</a></li>
-    <li><a href="#">Agnes</a></li>
 
-    <li><a href="#">Billy</a></li>
-    <li><a href="#">Bob</a></li>
 
-    <li><a href="#">Calvin</a></li>
-    <li><a href="#">Christina</a></li>
-    <li><a href="#">Cindy</a></li>
-</ul>
-<ul class="pagination">
-    <li><a href="#">1</a></li>
-    <li class="active"><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">4</a></li>
-    <li><a href="#">5</a></li>
-</ul>

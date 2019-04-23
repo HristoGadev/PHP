@@ -1,8 +1,7 @@
 function checkPass() {
 
     // let pattern = /(?=^.{8}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?&gt;.&lt;,])(?!.*\s).*$/gi;
-    let button=document.getElementsByClassName('registerbtn');
-    button.addEventListener('click', verifyPassword);
+    document.getElementsByClassName('registerbtn')[0].addEventListener('click', verifyPassword);
 
     function verifyPassword() {
         let input = document.getElementById('pass').value;

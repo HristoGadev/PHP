@@ -56,6 +56,7 @@
         text-align: center;
     }
 </style>
+<script src="JS/verifyPass.js"></script>
 <form method="POST">
     <div class="container">
         <h1>Register</h1>
@@ -75,11 +76,21 @@
     </div>
 
     <div class="container signin">
-        <p>Already have an account? <a href="#">Sign in</a>.</p>
+        <p>Already have an account? <a href="login.php">Sign in</a>.</p>
     </div>
-    <script src="verifyPass.js"></script>
+
     <script>
-        checkPass();
+
+            // let pattern = /(?=^.{8}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?&gt;.&lt;,])(?!.*\s).*$/gi;
+            document.getElementsByClassName('registerbtn')[0].addEventListener('click', verifyPassword);
+
+            function verifyPassword() {
+                let input = document.getElementById('pass').value;
+                if (input.length < 8) {
+                    alert('Password must be at least 8 characters long');
+                }
+            }
+
     </script>
 </form>
 

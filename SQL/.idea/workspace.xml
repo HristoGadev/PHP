@@ -2,20 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2db72721-6d43-4edb-b323-6f58c60a3f6b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../FFW_Task/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/.htaccess" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FFW_Task/.idea/dataSources/da87c467-424c-4914-b798-551a6514b611.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/.idea/dataSources/da87c467-424c-4914-b798-551a6514b611.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FFW_Task/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FFW_Task/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Http/HttpHandlerAbstract.php" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/App/Http/HttpHandlerAbstract.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Http/UserHttpHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/App/Http/UserHttpHandler.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/App/Repository/UserRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Repository/UserRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/App/Repository/UserRepositoryInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Service/UserService.php" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/App/Service/UserService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Service/UserServiceInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/App/Service/UserServiceInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Templates/home/indexs.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Templates/images/images.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Templates/images/picture.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Templates/images/upload.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Templates/users/forgottenPass.php" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/App/Templates/users/forgottenPass.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Templates/users/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/App/Templates/users/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Templates/users/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/App/Templates/users/profile.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Templates/users/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/App/Templates/users/register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Templates/users/verifyPass.js" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/App/Templates/users/verifyPass.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FFW_Task/Config/db.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/Config/db.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Templates/users/verifyPass.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../FFW_Task/Config/db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/Config/db.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FFW_Task/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FFW_Task/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../MyORM/.idea/dataSources/e8356f73-336d-4a38-8f91-356990020fae.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MyORM/.idea/dataSources/e8356f73-336d-4a38-8f91-356990020fae.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../MyORM/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MyORM/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -43,8 +48,8 @@
     <session id="-1671940449">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="30" />
-          <entry key="project.open.time.0" value="3" />
+          <entry key="project.closed" value="31" />
+          <entry key="project.open.time.0" value="4" />
           <entry key="project.open.time.1" value="11" />
           <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.3" value="1" />
@@ -52,7 +57,7 @@
           <entry key="project.open.time.7" value="3" />
           <entry key="project.open.time.8" value="5" />
           <entry key="project.open.time.9" value="4" />
-          <entry key="project.opened" value="30" />
+          <entry key="project.opened" value="31" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -138,11 +143,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/paging.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="5" column="33" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="33" />
+            <state relative-caret-position="153">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
@@ -174,11 +179,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/footer.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="14" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="14" />
+            <state relative-caret-position="-40">
+              <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -266,7 +271,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -306,6 +310,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -405,17 +410,18 @@
       <workItem from="1555598836888" duration="44000" />
       <workItem from="1555598897292" duration="251000" />
       <workItem from="1555660763275" duration="598000" />
+      <workItem from="1555964448634" duration="695000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38188000" />
+    <option name="totallyTimeSpent" value="38883000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.111409396" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11275168" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -535,20 +541,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/libs/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/paging.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="5" column="33" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/header.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -556,10 +548,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/libs/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/footer.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="14" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="14" />
+        <state relative-caret-position="-40">
+          <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/paging.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>

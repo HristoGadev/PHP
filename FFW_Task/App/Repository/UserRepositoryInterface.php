@@ -26,6 +26,14 @@ interface UserRepositoryInterface
 
     public function updateUser(int $id, UserDTO $userDTO): void;
 
-    public function insertPicture(PictureDTO $pictureDTO,int $id): bool;
-    public function findAll():\Generator;
+    public function insertPicture(PictureDTO $pictureDTO, int $id): bool;
+
+    public function findAll(): \Generator;
+
+
+    public function getAllPicturesPublic(string $visibility, int $id = null): \Generator;
+
+    public function getAllPicturesProtected(string $visibility, int $id = null): \Generator;
+
+    public function getAllPictures(int $id = null): \Generator;
 }
