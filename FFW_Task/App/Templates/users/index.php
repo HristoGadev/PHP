@@ -17,14 +17,12 @@
         border: 1px solid #ddd; /* Add a grey border */
         margin-bottom: 12px; /* Add some space below the input */
     }
-
     #myUL {
         /* Remove default list styling */
         list-style-type: none;
         padding: 0;
         margin: 0;
     }
-
     #myUL li a {
         border: 1px solid #ddd; /* Add a border to all links */
         margin-top: -1px; /* Prevent double borders */
@@ -35,51 +33,41 @@
         color: black; /* Add a black text color */
         display: block; /* Make it into a block element to fill the whole list */
     }
-
     #myUL li a:hover:not(.header) {
         background-color: #eee; /* Add a hover effect to all links, except for headers */
     }
-
     body {
         background-color: #A89465;
         font-family: 'Calibri';
     }
-
     main table {
         width: 100%;
         border: 1px solid #FEAE00;
         border-spacing: 0px;
     }
-
     main th, td {
         width: 25%;
         padding: 15px;
         text-align: left;
     }
-
     main td {
         vertical-align: bottom;
     }
-
     main th {
         background-color: #feae00;
         color: white;
     }
-
     main table img {
         width: 100px;
         height: auto;
     }
-
     main tr:nth-child(odd) {
         background-color: beige;
     }
-
     .topnav {
         background-color: #333;
         overflow: hidden;
     }
-
     .topnav a {
         float: left;
         display: block;
@@ -89,37 +77,31 @@
         text-decoration: none;
         font-size: 17px;
     }
-
     .topnav a.logo {
         padding: 0px;
         padding-top: 4px;
     }
-
     .topnav a.right {
         float: right;
     }
-
     .topnav a:hover {
         background-color: #ddd;
         color: black;
     }
-
     .topnav a.active {
         background-color: #FEAE00;
         color: white;
     }
-
     h3 {
         color: white;
     }
-
 </style>
 <nav>
 
     <div class="topnav">
         <a class="left">Users Galeries</a>
         <a class="right"> <?php if (isset($_SESSION['id'])) {
-                echo $_SESSION['name'];
+                echo$_SERVER['PHP_AUTH_USER'];
             }
             ?></a>
     </div>
@@ -137,11 +119,10 @@
 <?php endforeach; ?>
 
 
-<div class="container signin"> <?php if (!isset($_SESSION['id'])) {
+<div class="container signin"> <?php if (!isset($_SERVER['PHP_AUTH_USER'])) {
         echo ' <p>Already have an account? <a href="login.php">Login</a>.</p>';
         echo ' <p>If you don`t have an account? <a href="register.php">Register</a>.</p>';
     }
     ?>
 
 </div>
-

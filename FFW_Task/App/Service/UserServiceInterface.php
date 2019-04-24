@@ -22,15 +22,17 @@ interface UserServiceInterface
 
     public function forgottenPassword(string $username): ?UserDTO;
 
-    public function editPassword(UserDTO $userDTO,string $password): void;
+    public function editPassword(UserDTO $userDTO, string $password): void;
 
     public function addPicture(PictureDTO $pictureDTO): bool;
 
     public function getAll(): \Generator;
 
-    public function getPictures(string $username):\Generator;
+    public function getPictures(string $username): \Generator;
 
-    public function editPicture(PictureDTO $pictureDTO,$visibility):bool;
+    public function editPicture(PictureDTO $pictureDTO, $visibility): bool;
+
+    public function submitReorderedPics($position, $id): bool;
 
 
 }

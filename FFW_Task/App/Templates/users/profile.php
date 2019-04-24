@@ -7,7 +7,7 @@
 </head>
 <style>
     body {
-        background-color: #F9D977;
+        background-color: #A89465;
         font-family: 'Calibri';
     }
 
@@ -74,16 +74,20 @@
         background-color: #FEAE00;
         color: white;
     }
+    h3 {
+        text-align: center;
+    }
 </style>
 <body>
 <header>
     <nav>
         <div class="topnav">
             <a href="index.php">Users info</a>
-            <a class="right"> User: <?= $_SESSION['targetName'] ?></a>
+            <a class="right"><span class="glyphicon glyphicon-user"> User: <?= $_SESSION['targetName'] ?></span></a>
             <a class="right"> <?php if ($data->getUsername() === $_SESSION['targetName']) {
                     echo "Email: {$data->getEmail()}";
                 } ?></a>
+
         </div>
     </nav>
 
@@ -112,9 +116,11 @@
         <br/>';
 
     } else {
-        echo " Hello, my name is {$_SESSION['targetName']}.";
-        echo '<p>If you want to see mine pictures please go to my gallery</p>';
-        echo '<a href="index.php">Gallery</a>';
+        echo' <div class="container" style="width:500px;">';
+
+        echo '<h3 > Hello,if you want to see mine pictures please go to users gallery :). Have a nice day!</h3>';
+        echo '<button type="submit" name="gallery" class="btn btn-primary"> Go to users galleries</button>';
+        echo' </div>';
     }
     ?>
 </header>

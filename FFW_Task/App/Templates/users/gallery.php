@@ -1,11 +1,12 @@
 <?php /** @var \App\Data\PictureDTO [] $data */ ?>
 <link rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+<link href="bootstrap3.css" rel="stylesheet">
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 <style>
     body {
-        background-color: #F9D977;
+        background-color: #A89465;
         font-family: 'Calibri';
     }
 
@@ -101,7 +102,7 @@
 
         <a class="left" href="index.php">Users gallery</a>
         <a class="right"><?php if (isset($_SESSION['id'])) {
-                echo $_SESSION['name'];
+                echo $_SERVER['PHP_AUTH_USER'];
             }
             ?></a>
     </div>
@@ -111,12 +112,14 @@
         <!-- List Images -->
 
         <ul id="sortable">
-            <?php foreach ($data as $image): ?>
+            <?php
+            $counter = 0;
+            foreach ($data as $image): $counter++; ?>
 
                 <li class="ui-sortable-handle" id="image_'<?php echo $image->getId(); ?>'">
                     <img src="App/Templates/images/<?php echo $image->getName(); ?>">
 
-                    <?php if (isset($_SESSION['id']) && $_SESSION['targetName'] == $_SESSION['name'])
+                    <?php if (isset($_SESSION['id']) && $_SESSION['targetName'] == $_SERVER['PHP_AUTH_USER'])
 
                         echo '<label><input type="radio" name="optradio" value="Private">Private</label>
                 <label><input type="radio" name="optradio" value="Public">Public</label>
@@ -129,26 +132,42 @@
 
     </div>
 
-<?php if (isset($_SESSION['id']) && $_SESSION['targetName'] === $_SESSION['name']) {
-    echo '<div style="clear: both; margin-top: 20px;">
+
+    <?php if (isset($_SESSION['id']) && $_SESSION['targetName'] === $_SERVER['PHP_AUTH_USER']) {
+        echo '<div style="clear: both; margin-top: 20px;">
     <input type="submit" value="Submit" name="submit">
 </div>';
-} ?>
+    } ?>
 </form>
 </nav>
+<?php
+$limit = 5;
+if (isset($_GET["page"])) {
+    $page = $_GET["page"];
+} else {
+    $page = 1;
+};
+$start_from = ($page - 1) * $limit;
 
+$total_records = $counter;
+$total_pages = ceil($total_records / $limit);
+$pagLink = "<div class='pagination'>";
+for ($i = 1; $i <= $total_pages; $i++) {
+    $pagLink .= "<a href='gallery.php?page=" . $i . "'>" . $i . "</a>";
+};
+echo $pagLink . "</div>";
+?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script>
-
     $(document).ready(function () {
 
         // Initialize sortable
         $("#sortable").sortable();
 
         // Save order
-        /*$('#submit').click(function () {
+        $('#submit').click(function () {
             var imageids_arr = [];
             // get image ids order
             $('#sortable li').each(function () {
@@ -159,14 +178,14 @@
 
             // AJAX request
             $.ajax({
-                url: 'ajaxfile.php',
-                type: 'post',
+                url: '/reorder.php',
+                type: 'POST',
                 data: {imageids: imageids_arr},
                 success: function (response) {
                     alert('Save successfully.');
                 }
-            });*/
+            });
+        });
     });
-    })
 
 </script>

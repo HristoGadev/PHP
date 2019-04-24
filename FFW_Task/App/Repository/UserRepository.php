@@ -156,4 +156,17 @@ class UserRepository implements UserRepositoryInterface
         ]);
         return true;
     }
+
+    public function reorder($position, $id): bool
+    {
+        $this->db->query("
+          UPDATE `ffw_task`.`images` 
+          SET `sort`=? 
+          WHERE  `id`=?;
+        ")->execute([
+            $position,
+            $id
+        ]);
+        return true;
+    }
 }

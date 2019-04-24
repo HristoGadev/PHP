@@ -27,7 +27,7 @@ class UserService implements UserServiceInterface
         if ($this->userRepository->findOneByName($userDTO->getUsername()) !== null) {
             return false;
         }
-        if(strlen( $userDTO->getPassword())<8){
+        if (strlen($userDTO->getPassword()) < 8) {
             return false;
         }
         $this->encryptPass($userDTO);
@@ -72,11 +72,11 @@ class UserService implements UserServiceInterface
         return $currentUser;
     }
 
-    public function editPassword(UserDTO $userDTO,string $password): void
+    public function editPassword(UserDTO $userDTO, string $password): void
     {
         $this->encryptPass($userDTO);
-        var_dump($userDTO);
-        $this->userRepository->updateUser($userDTO->getId(),  $password);
+
+        $this->userRepository->updateUser($userDTO->getId(), $password);
 
     }
 
@@ -105,14 +105,14 @@ class UserService implements UserServiceInterface
         $user = $this->userRepository->findOneByName($username);
         $userId = $user->getId();
 
-        if ($this->currentUser()===null) {
+        if ($this->currentUser() === null) {
             $visibility = 'Public';
             return $this->userRepository->getAllPicturesPublic($visibility, $userId);
 
-        }else if ($this->currentUser()->getUsername() === $_SESSION['targetName']){
+        } else if ($this->currentUser()->getUsername() === $_SESSION['targetName']) {
 
             return $this->userRepository->getAllPictures($userId);
-        }else{
+        } else {
 
             $visibility = 'Private';
             return $this->userRepository->getAllPicturesProtected($visibility, $userId);
@@ -128,11 +128,21 @@ class UserService implements UserServiceInterface
     }
 
 
-    public function editPicture(PictureDTO $pictureDTO,$visibility): bool
+    public function editPicture(PictureDTO $pictureDTO, $visibility): bool
     {
 
         if ($this->userRepository->updatePicture($pictureDTO, $visibility)) {
 
+            return true;
+        } else {
+
+            return false;
+        }
+    }
+
+    public function submitReorderedPics($position, $id): bool
+    {
+        if ($this->userRepository->reorder($position, $id)) {
             return true;
         } else {
 

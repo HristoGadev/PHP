@@ -103,7 +103,7 @@
 
 <form method="POST">
     <button type="submit" class="btn btn-success" name="login">Login</button>
-    <button type="submit" class="btn btn-warning" name="forgot_password">Forgot Password</button>
+    <button type="submit" class="btn btn-info" name="forgot_password">Forgot Password</button>
 
 </form>
 

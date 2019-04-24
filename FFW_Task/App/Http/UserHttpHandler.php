@@ -17,6 +17,22 @@ use App\Service\UserServiceInterface;
 
 class UserHttpHandler extends HttpHandlerAbstract
 {
+    public function reorderPictures(UserServiceInterface $userService, $data = [])
+    {
+        if (isset($data['submit'])) {
+            $imageids_arr = $data['imageids'];
+
+            var_dump($imageids_arr);
+            $position = 1;
+            foreach ($imageids_arr as $id) {
+                $userService->submitReorderedPics($position, $id);
+                $position++;
+            }
+
+
+        }
+    }
+
     public function allPictures(UserServiceInterface $userService, $data = [])
     {
         $user = $_SESSION['targetName'];
@@ -38,8 +54,11 @@ class UserHttpHandler extends HttpHandlerAbstract
             }
         }
         if (isset($data['submit'])) {
-            echo 'End game';
+           //$imageids_arr = $data['imageids'];
+
+            var_dump($_POST);
         }
+
 
     }
 
@@ -89,14 +108,16 @@ class UserHttpHandler extends HttpHandlerAbstract
     public function loginUser(UserServiceInterface $userService, $data = [])
     {
         if (isset($data['login'])) {
+
             if (!isset($_SERVER['PHP_AUTH_USER'])) {
                 header('WWW-Authenticate: Basic realm="My Realm"');
                 header('HTTP/1.0 401 Unauthorized');
                 exit;
             } else {
-                echo "<p>Hello {$_SERVER['PHP_AUTH_USER']}. Go to your <a href='profile.php'>Profile</a> </p>";
+                //echo "<p>Hello {$_SERVER['PHP_AUTH_USER']}. Go to your <a href='profile.php'>Profile</a> </p>";
                 $username = $_SERVER['PHP_AUTH_USER'];
                 $password = $_SERVER['PHP_AUTH_PW'];
+
                 $this->loginHandlerProcess($userService, $username, $password);
             }
         } else if (isset($data['forgot_password'])) {
@@ -113,7 +134,7 @@ class UserHttpHandler extends HttpHandlerAbstract
         $user = $this->dataBinder->bind($data, UserDTO::class);
 
         if ($userService->register($user)) {
-            $this->redirect('login.php');
+            $this->redirect('profile.php');
         } else {
             $this->render("users/register");
         }
@@ -122,6 +143,7 @@ class UserHttpHandler extends HttpHandlerAbstract
     private function loginHandlerProcess(UserServiceInterface $userService, $username, $password)
     {
         $currentUser = $userService->login($username, $password);
+
         if ($currentUser !== null) {
             $_SESSION['id'] = $currentUser->getId();
 
@@ -130,7 +152,7 @@ class UserHttpHandler extends HttpHandlerAbstract
 
             $this->redirect('profile.php');
         } else {
-            $this->render("app/error", new ErrorDTO("Wrong username or password"));
+            $this->render("users/login");
         }
         return $currentUser;
     }
@@ -145,6 +167,7 @@ class UserHttpHandler extends HttpHandlerAbstract
 
             $name = $_FILES["image"]["name"];
             if ($name != null) {
+                var_dump($_FILES);
                 $visibility = $data['optradio'];
 
 
@@ -153,10 +176,10 @@ class UserHttpHandler extends HttpHandlerAbstract
 
                 $picture = $this->dataBinder->bind($data, PictureDTO::class);
                 if ($userService->addPicture($picture)) {
-                    echo '<script>alert("Image Inserted into Database")</script>';
+                    echo '<script>alert("Image Inserted ")</script>';
                 }
             } else {
-                $this->render("app/error", new ErrorDTO("No image"));;
+                echo '<script>alert("Image is not inserted")</script>';;
             }
         }
 
@@ -170,24 +193,25 @@ class UserHttpHandler extends HttpHandlerAbstract
     private function forgotPassProcess(UserServiceInterface $userService, $data)
     {
         $currentUser = $userService->forgottenPassword($data['username']);
-        var_dump($currentUser);
+
         if ($currentUser != null) {
 
             $userEmail = $currentUser->getEmail();
 
-           $password= $this->generatePassword(8);
-            var_dump($password);
+            $password = $this->generatePassword(8);
+
 
             if (mail("You@me.com", "Your Recovered Password", "Please use this password to login " . $password, "From: me@you.com")) {
                 echo "Your Password has been sent to " . $userEmail;
+                $userService->editPassword($currentUser, $password);
+                $this->redirect('register.php');
+
             } else {
                 echo "Failed to Recover your password, try again";
             }
 
-            $userService->editPassword($currentUser,$password);
 
-        } else {
-            $this->render("app/error", new ErrorDTO("Username don`t exist"));
+
         }
     }
 

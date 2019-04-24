@@ -36,5 +36,7 @@ interface UserRepositoryInterface
 
     public function getAllPictures(int $id = null): \Generator;
 
-    public function updatePicture(PictureDTO $pictureDTO, $visibility):bool;
+    public function updatePicture(PictureDTO $pictureDTO, $visibility): bool;
+
+    public function reorder($position, $id): bool;
 }
