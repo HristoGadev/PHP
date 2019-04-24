@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bbdbfdf6-4262-4dd4-817f-cb9494c6ace6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/da87c467-424c-4914-b798-551a6514b611.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/da87c467-424c-4914-b798-551a6514b611.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Data/ErrorDTO.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Http/UserHttpHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Http/UserHttpHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Repository/UserRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Repository/UserRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Repository/UserRepositoryInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Service/UserService.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Service/UserService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Service/UserServiceInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Service/UserServiceInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Templates/app/error.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Templates/users/forgottenPass.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Templates/users/forgottenPass.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Templates/users/gallery.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Templates/users/gallery.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Templates/users/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Templates/users/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Templates/users/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Templates/users/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Templates/users/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Templates/users/profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Templates/users/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Templates/users/register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Config/db.sql" afterDir="false" />
-    </list>
+    <list default="true" id="bbdbfdf6-4262-4dd4-817f-cb9494c6ace6" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +56,7 @@
     <session id="51102230">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="30" />
+          <entry key="project.closed" value="31" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.3" value="1" />
@@ -81,8 +64,8 @@
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="9" />
           <entry key="project.open.time.8" value="8" />
-          <entry key="project.open.time.9" value="6" />
-          <entry key="project.opened" value="31" />
+          <entry key="project.open.time.9" value="7" />
+          <entry key="project.opened" value="32" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -203,14 +186,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/App/Http/UserHttpHandler.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
+            <state relative-caret-position="-764">
               <caret line="74" column="28" lean-forward="true" selection-start-line="74" selection-start-column="28" selection-end-line="74" selection-end-column="28" />
               <folding>
                 <element signature="e#1983#2262#0#PHP" />
-                <element signature="e#2461#3176#0#PHP" />
               </folding>
             </state>
           </provider>
@@ -225,14 +207,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App/Templates/users/gallery.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
-              <caret line="146" column="8" lean-forward="true" selection-start-line="146" selection-start-column="8" selection-end-line="146" selection-end-column="8" />
-              <folding>
-                <element signature="n#style#0;n#!!top" />
-              </folding>
+              <caret line="146" column="8" selection-start-line="146" selection-start-column="8" selection-end-line="146" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -241,7 +220,7 @@
         <entry file="file://$PROJECT_DIR$/App/Http/HttpHandlerAbstract.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="493">
-              <caret line="35" column="1" lean-forward="true" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
+              <caret line="35" column="1" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -249,11 +228,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App/Templates/users/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
+            <state relative-caret-position="1751">
               <caret line="103" column="45" selection-start-line="103" selection-start-column="45" selection-end-line="103" selection-end-column="45" />
-              <folding>
-                <element signature="n#style#0;n#!!top" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -262,7 +238,7 @@
         <entry file="file://$PROJECT_DIR$/profile.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
@@ -280,7 +256,7 @@
         <entry file="file://$PROJECT_DIR$/login.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
@@ -289,7 +265,7 @@
         <entry file="file://$PROJECT_DIR$/register.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="4" column="52" lean-forward="true" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="52" />
+              <caret line="4" column="52" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -555,11 +531,12 @@
       <workItem from="1556081812756" duration="4224000" />
       <workItem from="1556086092350" duration="1667000" />
       <workItem from="1556087846079" duration="2563000" />
+      <workItem from="1556090648456" duration="332000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="202334000" />
+    <option name="totallyTimeSpent" value="202666000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -574,7 +551,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17315437" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17516778" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -826,10 +803,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="76" column="12" lean-forward="true" selection-start-line="76" selection-start-column="12" selection-end-line="76" selection-end-column="12" />
-          <folding>
-            <element signature="n#style#0;n#!!top" />
-            <element signature="e#290#364#0#HTML" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -843,6 +816,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/App/Templates/users/pagination.php" />
+    <entry file="das://da87c467-424c-4914-b798-551a6514b611/schema/ffw_task/table/images">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Http/HttpHandlerAbstract.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="35" column="1" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Templates/users/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1751">
+          <caret line="103" column="45" selection-start-line="103" selection-start-column="45" selection-end-line="103" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/profile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="das://da87c467-424c-4914-b798-551a6514b611/schema/ffw_task/table/users">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -853,72 +855,30 @@
     <entry file="file://$PROJECT_DIR$/login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/register.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" column="52" lean-forward="true" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/profile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Http/HttpHandlerAbstract.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="35" column="1" lean-forward="true" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Templates/users/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="103" column="45" selection-start-line="103" selection-start-column="45" selection-end-line="103" selection-end-column="45" />
-          <folding>
-            <element signature="n#style#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Http/UserHttpHandler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="74" column="28" lean-forward="true" selection-start-line="74" selection-start-column="28" selection-end-line="74" selection-end-column="28" />
-          <folding>
-            <element signature="e#1983#2262#0#PHP" />
-            <element signature="e#2461#3176#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://da87c467-424c-4914-b798-551a6514b611/schema/ffw_task/table/images">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Templates/users/pagination.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" selection-start-line="15" selection-end-line="33" selection-end-column="2" />
+          <caret line="4" column="52" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/App/Templates/users/gallery.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="146" column="8" lean-forward="true" selection-start-line="146" selection-start-column="8" selection-end-line="146" selection-end-column="8" />
+          <caret line="146" column="8" selection-start-line="146" selection-start-column="8" selection-end-line="146" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Http/UserHttpHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-764">
+          <caret line="74" column="28" lean-forward="true" selection-start-line="74" selection-start-column="28" selection-end-line="74" selection-end-column="28" />
           <folding>
-            <element signature="n#style#0;n#!!top" />
+            <element signature="e#1983#2262#0#PHP" />
           </folding>
         </state>
       </provider>

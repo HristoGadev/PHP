@@ -95,6 +95,11 @@
     h3 {
         color: white;
     }
+    h4{
+
+        text-align: center;
+
+    }
 </style>
 <nav>
 
@@ -120,8 +125,8 @@
 
 
 <div class="container signin"> <?php if (!isset($_SERVER['PHP_AUTH_USER'])) {
-        echo ' <p>Already have an account? <a href="login.php">Login</a>.</p>';
-        echo ' <p>If you don`t have an account? <a href="register.php">Register</a>.</p>';
+        echo ' <h4>Already have an account? <a href="login.php">Login</a>.</h4>';
+        echo ' <h4>If you don`t have an account? <a href="register.php">Register</a>.</h4>';
     }
     ?>
 
