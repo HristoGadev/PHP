@@ -24,4 +24,11 @@ class PDOResultSet implements ResultSetInterface
             yield $row;
         }
     }
+
+    public function fetchPictures()
+    {
+        while ($row = $this->pdoStatement->fetchAll()) {
+          return   $row;
+        }
+    }
 }

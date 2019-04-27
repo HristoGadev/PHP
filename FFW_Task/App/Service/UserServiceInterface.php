@@ -28,7 +28,7 @@ interface UserServiceInterface
 
     public function getAll(): \Generator;
 
-    public function getPictures(string $username): \Generator;
+    public function getPictures(string $username);
 
     public function editPicture(PictureDTO $pictureDTO, $visibility): bool;
 

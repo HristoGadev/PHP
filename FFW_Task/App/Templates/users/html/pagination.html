@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<div ng-app="Test">
+    <div ng-controller="Main">
+        <ul>
+            <li ng-repeat="item in data">
+                {{item}}
+            </li>
+        </ul>
+        <button ng-hide="offset == 0" ng-click="previous()"><<</button>
+        <span ng-repeat="i in navButtons">
+            <span ng-class="$parent.offset == i * $parent.perPage && 'active'" class="button" ng-click="$parent.offset = (i * $parent.perPage)">{{i+1}}</span>
+        </span>
+        <button ng-hide="offset + perPage >= allData.length" ng-click="next()">>></button>
+
+    </div>
+</div>
+</body>
+</html>

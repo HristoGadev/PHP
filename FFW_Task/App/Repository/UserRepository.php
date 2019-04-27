@@ -108,7 +108,7 @@ class UserRepository implements UserRepositoryInterface
             ->fetch(UserDTO::class);
     }
 
-    public function getAllPicturesPublic(string $visibility,int $id=null): \Generator
+    public function getAllPicturesPublic(string $visibility,int $id=null)
     {
         return $this->db->query("
             SELECT  id,name,visibility
@@ -117,11 +117,10 @@ class UserRepository implements UserRepositoryInterface
             
             
         ")->execute([$visibility,$id])
-            ->fetch(PictureDTO::class);
+            ->fetchPictures();
     }
 
-
-    public function getAllPicturesProtected(string $visibility, int $id = null): \Generator
+    public function getAllPicturesProtected(string $visibility, int $id = null)
     {
         return $this->db->query("
             SELECT  id,name,visibility
@@ -129,10 +128,10 @@ class UserRepository implements UserRepositoryInterface
             WHERE images.visibility!=?  AND userId=?
             
         ")->execute([$visibility,$id])
-            ->fetch(PictureDTO::class);
+            ->fetchPictures();
     }
 
-    public function getAllPictures(int $id = null): \Generator
+    public function getAllPictures(int $id = null)
     {
         return $this->db->query("
             SELECT  id,name,visibility
@@ -140,7 +139,7 @@ class UserRepository implements UserRepositoryInterface
             WHERE  userId=?
             
         ")->execute([$id])
-            ->fetch(PictureDTO::class);
+            ->fetchPictures();
     }
 
     public function updatePicture(PictureDTO $pictureDTO, $visibility):bool

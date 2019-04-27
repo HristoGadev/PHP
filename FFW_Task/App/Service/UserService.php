@@ -98,7 +98,7 @@ class UserService implements UserServiceInterface
         return $this->userRepository->findAll();
     }
 
-    public function getPictures(string $username): \Generator
+    public function getPictures(string $username)
     {
 
 
