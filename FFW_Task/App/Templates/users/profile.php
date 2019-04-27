@@ -6,77 +6,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <style>
-    body {
-        background-color: #A89465;
-        font-family: 'Calibri';
-    }
-
-    main table {
-        width: 100%;
-        border: 1px solid #FEAE00;
-        border-spacing: 0px;
-    }
-
-    main th, td {
-        width: 25%;
-        padding: 15px;
-        text-align: left;
-    }
-
-    main td {
-        vertical-align: bottom;
-    }
-
-    main th {
-        background-color: #feae00;
-        color: white;
-    }
-
-    main table img {
-        width: 100px;
-        height: auto;
-    }
-
-    main tr:nth-child(odd) {
-        background-color: beige;
-    }
-
-    .topnav {
-        background-color: #333;
-        overflow: hidden;
-    }
-
-    .topnav a {
-        float: left;
-        display: block;
-        color: #f2f2f2;
-        text-align: center;
-        padding: 14px;
-        text-decoration: none;
-        font-size: 17px;
-    }
-
-    .topnav a.logo {
-        padding: 0px;
-        padding-top: 4px;
-    }
-
-    .topnav a.right {
-        float: right;
-    }
-
-    .topnav a:hover {
-        background-color: #ddd;
-        color: black;
-    }
-
-    .topnav a.active {
-        background-color: #FEAE00;
-        color: white;
-    }
-    h3 {
-        text-align: center;
-    }
+    <?php include 'css/profile.css'?>
 </style>
 <body>
 <header>
@@ -87,6 +17,9 @@
             <a class="right"> <?php if ($data->getUsername() === $_SESSION['targetName']) {
                     echo "Email: {$data->getEmail()}";
                 } ?></a>
+            <form method="POST">
+                <a href="logout.php"> Log out</a>
+            </form>
 
         </div>
     </nav>
@@ -127,21 +60,5 @@
 </body>
 
 <script>
-    $(document).ready(function () {
-        $('#insert').click(function () {
-            let image_name = $('#image').val();
-            if (image_name == '') {
-                alert("Please Select Image");
-                return false;
-            }
-            else {
-                let extension = $('#image').val().split('.').pop().toLowerCase();
-                if (jQuery.inArray(extension, ['gif', 'png', 'jpg', 'jpeg']) == -1) {
-                    alert('Invalid Image File');
-                    $('#image').val('');
-                    return false;
-                }
-            }
-        });
-    });
+   <?php include 'js/checkImage.js'?>
 </script>

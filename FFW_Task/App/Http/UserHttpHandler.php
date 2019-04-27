@@ -17,20 +17,31 @@ use App\Service\UserServiceInterface;
 
 class UserHttpHandler extends HttpHandlerAbstract
 {
+    public function logoutUser(UserServiceInterface $userService)
+    {
+
+        unset($_SESSION["id"]);
+        unset($_SESSION["targetName"]);
+
+        unset($_SERVER['PHP_AUTH_USER']);
+        unset($_SERVER['PHP_AUTH_PW']);
+
+
+        $this->redirect('index.php');
+    }
+
     public function reorderPictures(UserServiceInterface $userService, $data = [])
     {
-        if (isset($data['submit'])) {
-            $imageids_arr = $data['imageids'];
 
-            var_dump($imageids_arr);
-            $position = 1;
-            foreach ($imageids_arr as $id) {
-                $userService->submitReorderedPics($position, $id);
-                $position++;
-            }
+        $imageids_arr = $_POST['imageids'];
+        var_dump($imageids_arr);
 
-
+        $position = 1;
+        foreach ($imageids_arr as $id) {
+            $userService->submitReorderedPics($position, $id);
+            $position++;
         }
+
     }
 
     public function allPictures(UserServiceInterface $userService, $data = [])
@@ -53,12 +64,6 @@ class UserHttpHandler extends HttpHandlerAbstract
                 echo '<script>alert("Image successfully edited")</script>';
             }
         }
-        if (isset($data['submit'])) {
-           //$imageids_arr = $data['imageids'];
-
-            var_dump($_POST);
-        }
-
 
     }
 
@@ -107,6 +112,7 @@ class UserHttpHandler extends HttpHandlerAbstract
 
     public function loginUser(UserServiceInterface $userService, $data = [])
     {
+        $this->render("users/login");
         if (isset($data['login'])) {
 
             if (!isset($_SERVER['PHP_AUTH_USER'])) {
@@ -115,6 +121,7 @@ class UserHttpHandler extends HttpHandlerAbstract
                 exit;
             } else {
                 //echo "<p>Hello {$_SERVER['PHP_AUTH_USER']}. Go to your <a href='profile.php'>Profile</a> </p>";
+
                 $username = $_SERVER['PHP_AUTH_USER'];
                 $password = $_SERVER['PHP_AUTH_PW'];
 
@@ -134,9 +141,10 @@ class UserHttpHandler extends HttpHandlerAbstract
         $user = $this->dataBinder->bind($data, UserDTO::class);
 
         if ($userService->register($user)) {
+
             $this->redirect('profile.php');
         } else {
-            $this->render("users/register");
+            $this->render("users/login");
         }
     }
 
@@ -165,9 +173,11 @@ class UserHttpHandler extends HttpHandlerAbstract
 
         if (isset($data['insert'])) {
 
+
             $name = $_FILES["image"]["name"];
+
             if ($name != null) {
-                var_dump($_FILES);
+
                 $visibility = $data['optradio'];
 
 
@@ -198,7 +208,7 @@ class UserHttpHandler extends HttpHandlerAbstract
 
             $userEmail = $currentUser->getEmail();
 
-            $password = $this->generatePassword(8);
+            $password = $this->generatePassword();
 
 
             if (mail("You@me.com", "Your Recovered Password", "Please use this password to login " . $password, "From: me@you.com")) {
@@ -211,12 +221,12 @@ class UserHttpHandler extends HttpHandlerAbstract
             }
 
 
-
         }
     }
 
-    private function generatePassword($length = 8)
+    private function generatePassword()
     {
+        $length = 8;
         $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
         $count = mb_strlen($chars);
 

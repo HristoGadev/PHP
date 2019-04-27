@@ -1,66 +1,10 @@
 <link rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-<link rel="stylesheet" href="../css/register.css">
+<link rel="stylesheet" href="css/register.css">
 <style>
-    * {box-sizing: border-box}
-
-    /* Add padding to containers */
-    .container {
-        padding: 16px;
-    }
-    body {
-        background-color: #C2DDE9;
-        font-family: 'Calibri';
-    }
-    /* Full-width input fields */
-    input[type=text], input[type=password] {
-        width: 100%;
-        padding: 15px;
-        margin: 5px 0 22px 0;
-        display: inline-block;
-        border: none;
-        background: #f1f1f1;
-    }
-
-    input[type=text]:focus, input[type=password]:focus {
-        background-color: #ddd;
-        outline: none;
-    }
-
-    /* Overwrite default styles of hr */
-    hr {
-        border: 1px solid #f1f1f1;
-        margin-bottom: 25px;
-    }
-
-    /* Set a style for the submit/register button */
-    .registerbtn {
-        background-color: #4CAF50;
-        color: white;
-        padding: 16px 20px;
-        margin: 8px 0;
-        border: none;
-        cursor: pointer;
-        width: 100%;
-        opacity: 0.9;
-    }
-
-    .registerbtn:hover {
-        opacity:1;
-    }
-
-    /* Add a blue text color to links */
-    a {
-        color: dodgerblue;
-    }
-
-    /* Set a grey background color and center the text of the "sign in" section */
-    .signin {
-        background-color: #f1f1f1;
-        text-align: center;
-    }
+    <?php include 'css/register.css'; ?>
 </style>
-<script src="JS/verifyPass.js"></script>
+
 <form method="POST">
     <div class="container">
         <h1>Register</h1>
@@ -84,18 +28,7 @@
     </div>
 
     <script>
-        //f password must contains at least  one number, one capital and lowercase letter, one special characters
-        // let pattern = /(?=^.{8}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?&gt;.&lt;,])(?!.*\s).*$/gi;
-
-            document.getElementsByClassName('registerbtn')[0].addEventListener('click', verifyPassword);
-
-            function verifyPassword() {
-                let input = document.getElementById('pass').value;
-                if (input.length < 8) {
-                    alert('Password must be at least 8 characters long');
-                }
-            }
-
+      <?php include 'js/validatePass.js' ?>
     </script>
 </form>
 

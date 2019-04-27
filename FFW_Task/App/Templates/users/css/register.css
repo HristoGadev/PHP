@@ -4,7 +4,10 @@
 .container {
     padding: 16px;
 }
-
+body {
+    background-color: #C2DDE9;
+    font-family: 'Calibri';
+}
 /* Full-width input fields */
 input[type=text], input[type=password] {
     width: 100%;

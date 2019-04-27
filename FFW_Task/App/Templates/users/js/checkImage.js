@@ -1,4 +1,4 @@
-function checkImage() {
+
     $(document).ready(function () {
         $('#insert').click(function () {
             let image_name = $('#image').val();
@@ -16,4 +16,3 @@ function checkImage() {
             }
         });
     });
-}
