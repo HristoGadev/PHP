@@ -3,12 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e8bf297c-0f30-49b9-af1b-5af938dd6b1e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../FFW_Task/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Http/UserHttpHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/App/Http/UserHttpHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/App/Repository/UserRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Repository/UserRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/App/Repository/UserRepositoryInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Service/UserService.php" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/App/Service/UserService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Templates/users/gallery.php" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/App/Templates/users/gallery.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Templates/users/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/../FFW_Task/App/Templates/users/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Templates/users/html/pagination.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Templates/users/js/pagination.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FFW_Task/App/Templates/users/pagination.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -111,16 +109,16 @@
     <session id="1213038365">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="30" />
+          <entry key="project.closed" value="31" />
           <entry key="project.open.time.0" value="7" />
-          <entry key="project.open.time.1" value="7" />
+          <entry key="project.open.time.1" value="8" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.6" value="2" />
           <entry key="project.open.time.7" value="3" />
           <entry key="project.open.time.8" value="6" />
           <entry key="project.open.time.9" value="3" />
-          <entry key="project.opened" value="31" />
+          <entry key="project.opened" value="32" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -174,10 +172,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/App/Http/UserHttpHandler.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1428">
+            <state relative-caret-position="725">
               <caret line="89" column="34" selection-start-line="89" selection-start-column="26" selection-end-line="89" selection-end-column="34" />
               <folding>
                 <element signature="e#111#133#0#PHP" expanded="true" />
@@ -186,11 +184,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App/Repository/UserRepository.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="248">
-              <caret line="68" column="27" lean-forward="true" selection-start-line="68" selection-start-column="27" selection-end-line="68" selection-end-column="27" />
+              <caret line="68" column="27" selection-start-line="68" selection-start-column="27" selection-end-line="68" selection-end-column="27" />
               <folding>
                 <element signature="e#117#138#0#PHP" expanded="true" />
               </folding>
@@ -228,7 +226,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App/Service/UserService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1360">
+            <state relative-caret-position="572">
               <caret line="92" column="5" selection-start-line="89" selection-start-column="3" selection-end-line="92" selection-end-column="5" />
               <folding>
                 <element signature="e#1278#1471#0#PHP" />
@@ -367,6 +365,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -444,14 +443,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mariadb" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../FFW_Task" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -524,17 +522,18 @@
       <workItem from="1556028810830" duration="152000" />
       <workItem from="1556046549603" duration="517000" />
       <workItem from="1556047330096" duration="759000" />
+      <workItem from="1556436431287" duration="623000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114714000" />
+    <option name="totallyTimeSpent" value="115337000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21342282" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21610738" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -819,16 +818,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/Http/UserHttpHandler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1428">
-          <caret line="89" column="34" selection-start-line="89" selection-start-column="26" selection-end-line="89" selection-end-column="34" />
-          <folding>
-            <element signature="e#111#133#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/App/Service/ProductService.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -847,16 +836,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="24" column="68" selection-start-line="24" selection-start-column="68" selection-end-line="24" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Service/UserService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1360">
-          <caret line="92" column="5" selection-start-line="89" selection-start-column="3" selection-end-line="92" selection-end-column="5" />
-          <folding>
-            <element signature="e#1278#1471#0#PHP" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -891,9 +870,29 @@
     <entry file="file://$PROJECT_DIR$/App/Repository/UserRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="248">
-          <caret line="68" column="27" lean-forward="true" selection-start-line="68" selection-start-column="27" selection-end-line="68" selection-end-column="27" />
+          <caret line="68" column="27" selection-start-line="68" selection-start-column="27" selection-end-line="68" selection-end-column="27" />
           <folding>
             <element signature="e#117#138#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Service/UserService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="92" column="5" selection-start-line="89" selection-start-column="3" selection-end-line="92" selection-end-column="5" />
+          <folding>
+            <element signature="e#1278#1471#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Http/UserHttpHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="725">
+          <caret line="89" column="34" selection-start-line="89" selection-start-column="26" selection-end-line="89" selection-end-column="34" />
+          <folding>
+            <element signature="e#111#133#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

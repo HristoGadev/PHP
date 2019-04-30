@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
 
     // Initialize sortable
@@ -16,11 +15,9 @@ $(document).ready(function () {
 
         // AJAX request
         $.ajax({
-
-            url: '/FFW_Task/reorder.php',
-            type: 'POST',
+            url: 'http://localhost/FFW_Task/reorder.php',
+            method: 'POST',
             data: {imageids: imageids_arr},
-
             success: function (response) {
                 alert('Save successfully.');
             }

@@ -127,7 +127,6 @@ class UserService implements UserServiceInterface
         $userDTO->setPassword($hashPass);
     }
 
-
     public function editPicture(PictureDTO $pictureDTO, $visibility): bool
     {
 

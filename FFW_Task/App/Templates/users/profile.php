@@ -20,7 +20,6 @@
             <form method="POST">
                 <a href="logout.php"> Log out</a>
             </form>
-
         </div>
     </nav>
 
@@ -35,7 +34,7 @@
             <br/>
 
             <div class="radio">
-                <label><input type="radio" name="optradio" value="Private">Private</label>
+                <label><input type="radio" name="optradio" value="Private" checked>Private</label>
             </div>
             <div class="radio">
                 <label><input type="radio" name="optradio" value="Public">Public</label>
@@ -52,7 +51,7 @@
         echo' <div class="container" style="width:500px;">';
 
         echo '<h3 > Hello,if you want to see mine pictures please go to users gallery :). Have a nice day!</h3>';
-        echo '<button type="submit" name="gallery" class="btn btn-primary"> Go to users galleries</button>';
+        echo '<button type="button" name="gallery" class="btn btn-primary"> Go to users galleries</button>';
         echo' </div>';
     }
     ?>

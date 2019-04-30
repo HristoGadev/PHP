@@ -94,6 +94,7 @@ class UserRepository implements UserRepositoryInterface
                 $pictureDTO->getName(),
                 $pictureDTO->getVisibility(),
                 $id
+
             ]);
         return true;
     }
@@ -114,7 +115,7 @@ class UserRepository implements UserRepositoryInterface
             SELECT  id,name,visibility
             FROM images
             WHERE images.visibility=?  AND userId=?
-            
+            ORDER BY sort ASC
             
         ")->execute([$visibility,$id])
             ->fetchPictures();
@@ -126,7 +127,7 @@ class UserRepository implements UserRepositoryInterface
             SELECT  id,name,visibility
             FROM images
             WHERE images.visibility!=?  AND userId=?
-            
+             ORDER BY sort ASC
         ")->execute([$visibility,$id])
             ->fetchPictures();
     }
@@ -137,7 +138,7 @@ class UserRepository implements UserRepositoryInterface
             SELECT  id,name,visibility
             FROM images
             WHERE  userId=?
-            
+             ORDER BY sort ASC
         ")->execute([$id])
             ->fetchPictures();
     }

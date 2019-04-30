@@ -2,4 +2,4 @@
 
 require_once "commonUser.php";
 
-$userHttpHandler->logoutUser($userService);
+$userHttpHandler->logoutUser();

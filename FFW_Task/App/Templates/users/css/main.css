@@ -103,3 +103,6 @@ main tr:nth-child(odd) {
 h3 {
     color: white;
 }
+h4{
+    text-align: center;
+}

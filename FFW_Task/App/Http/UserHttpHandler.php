@@ -17,29 +17,30 @@ use App\Service\UserServiceInterface;
 
 class UserHttpHandler extends HttpHandlerAbstract
 {
-    public function logoutUser(UserServiceInterface $userService)
+    public function logoutUser()
     {
-
-        unset($_SESSION["id"]);
-        unset($_SESSION["targetName"]);
-
-        unset($_SERVER['PHP_AUTH_USER']);
-        unset($_SERVER['PHP_AUTH_PW']);
-
-
+        session_destroy();
+        unset($_SESSION['session_id']);
         $this->redirect('index.php');
+
     }
 
     public function reorderPictures(UserServiceInterface $userService, $data = [])
     {
 
-        $imageids_arr = $_POST['imageids'];
-        var_dump($imageids_arr);
+        $imageids_arr = $data['imageids'];
+       // array_reverse($imageids_arr,true);
 
-        $position = 1;
+        foreach($imageids_arr as $arr){
+
+            array_unshift($imageids_arr, $arr);
+            array_pop($imageids_arr);
+
+        }
+        $position =  $_SESSION['startIndex']+1;
         foreach ($imageids_arr as $id) {
             $userService->submitReorderedPics($position, $id);
-            $position++;
+            $position--;
         }
 
     }
@@ -64,7 +65,7 @@ class UserHttpHandler extends HttpHandlerAbstract
                 echo '<script>alert("Image successfully edited")</script>';
             }
         }
-
+       
     }
 
     public function allUsers(UserServiceInterface $userService, $data = [])
@@ -113,7 +114,9 @@ class UserHttpHandler extends HttpHandlerAbstract
     public function loginUser(UserServiceInterface $userService, $data = [])
     {
         $this->render("users/login");
+
         if (isset($data['login'])) {
+
 
             if (!isset($_SERVER['PHP_AUTH_USER'])) {
                 header('WWW-Authenticate: Basic realm="My Realm"');
@@ -160,6 +163,8 @@ class UserHttpHandler extends HttpHandlerAbstract
 
             $this->redirect('profile.php');
         } else {
+            header('WWW-Authenticate: Basic realm="My Realm"');
+            header('HTTP/1.0 401 Unauthorized');
             $this->render("users/login");
         }
         return $currentUser;
@@ -185,6 +190,7 @@ class UserHttpHandler extends HttpHandlerAbstract
                     'visibility' => $visibility];
 
                 $picture = $this->dataBinder->bind($data, PictureDTO::class);
+
                 if ($userService->addPicture($picture)) {
                     echo '<script>alert("Image Inserted ")</script>';
                 }

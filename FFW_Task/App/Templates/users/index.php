@@ -15,9 +15,14 @@
         <a class="left">Users Galeries</a>
         <a class="right"> <?php if (isset($_SESSION['id'])) {
                 echo$_SERVER['PHP_AUTH_USER'];
+
+
             }
             ?></a>
+
     </div>
+
+
 </nav>
 <?php foreach ($data as $user):?>
 
