@@ -1,29 +1,16 @@
-function logout() {
+$(document).ready(function () {
 
-    // To invalidate a basic auth login:
-    //
-    // 	1. Call this logout function.
-    //	2. It makes a GET request to an URL with false Basic Auth credentials
-    //	3. The URL returns a 401 Unauthorized
-    // 	4. Forward to some "you-are-logged-out"-page
-    // 	5. Done, the Basic Auth header is invalid now
+    $('#rcdown').click(function () {
 
-    jQuery.ajax({
-        type: "GET",
-        url: "/FFW_Task/logout",
-        async: false,
-        username: "logmeout",
-        password: "123456",
-        headers: { "Authorization": "Basic xxx" }
-    })
-        .done(function(){
-            // If we don't get an error, we actually got an error as we expect an 401!
-        })
-        .fail(function(){
-            // We expect to get an 401 Unauthorized error! In this case we are successfully
-            // logged out and we redirect the user.
-            window.location = "/FFW_Task/index.php";
-        });
+        $username='shithappens';
+        $password='endgame'
+        let xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET", '/profile.php', true,null,null);
+        xmlhttp.setRequestHeader("Authorization", "Basic " + btoa($username + ":" + $password))
+        xmlhttp.send();
 
-    return false;
-}
+        setTimeout(function () {
+            window.location.href = 'http://localhost/FFW_Task/logout.php';
+        }, 200);
+    });
+});

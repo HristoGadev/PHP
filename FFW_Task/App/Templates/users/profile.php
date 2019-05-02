@@ -17,9 +17,10 @@
             <a class="right"> <?php if ($data->getUsername() === $_SESSION['targetName']) {
                     echo "Email: {$data->getEmail()}";
                 } ?></a>
-            <form method="POST">
-                <a href="logout.php"> Log out</a>
-            </form>
+
+                <button  class="button" id="rcdown" >Back to main page</button>>
+
+
         </div>
     </nav>
 
@@ -60,4 +61,7 @@
 
 <script>
    <?php include 'js/checkImage.js'?>
+</script>
+<script>
+    <?php include 'js/logout.js'?>
 </script>

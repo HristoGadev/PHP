@@ -19,25 +19,24 @@ class UserHttpHandler extends HttpHandlerAbstract
 {
     public function logoutUser()
     {
-        session_destroy();
-        unset($_SESSION['session_id']);
-        $this->redirect('index.php');
-
+            session_destroy();
+            header('HTTP/1.1 401 Unauthorized');
+            die('You successfully logOut ');
     }
 
     public function reorderPictures(UserServiceInterface $userService, $data = [])
     {
 
         $imageids_arr = $data['imageids'];
-       // array_reverse($imageids_arr,true);
 
-        foreach($imageids_arr as $arr){
+        foreach ($imageids_arr as $arr) {
 
             array_unshift($imageids_arr, $arr);
             array_pop($imageids_arr);
-
         }
-        $position =  $_SESSION['startIndex']+1;
+
+        $position = $_SESSION['startIndex'] + 1;
+
         foreach ($imageids_arr as $id) {
             $userService->submitReorderedPics($position, $id);
             $position--;
@@ -55,17 +54,21 @@ class UserHttpHandler extends HttpHandlerAbstract
             $name = $data['edit'];
 
             $visibility = $data['optradio'];
+            if ($visibility === null) {
+                echo '<script>alert("You don`t have permission to edit these pictures")</script>';
+            } else {
+                $data = ['name' => $name,
+                    'visibility' => $visibility];
 
-            $data = ['name' => $name,
-                'visibility' => $visibility];
+                $picture = $this->dataBinder->bind($data, PictureDTO::class);
 
-            $picture = $this->dataBinder->bind($data, PictureDTO::class);
-
-            if ($userService->editPicture($picture, $visibility)) {
-                echo '<script>alert("Image successfully edited")</script>';
+                if ($userService->editPicture($picture, $visibility)) {
+                    echo '<script>alert("Image successfully edited")</script>';
+                }
             }
+
         }
-       
+
     }
 
     public function allUsers(UserServiceInterface $userService, $data = [])
@@ -111,32 +114,22 @@ class UserHttpHandler extends HttpHandlerAbstract
 
     }
 
-    public function loginUser(UserServiceInterface $userService, $data = [])
+    public function loginUser(UserServiceInterface $userService)
     {
-        $this->render("users/login");
 
-        if (isset($data['login'])) {
+        if (!isset($_SERVER['PHP_AUTH_USER'])) {
+            header('WWW-Authenticate:Basic realm=Enter user/userpass as login and password');
+            header('HTTP/1.0 401 Unauthorized');
 
-
-            if (!isset($_SERVER['PHP_AUTH_USER'])) {
-                header('WWW-Authenticate: Basic realm="My Realm"');
-                header('HTTP/1.0 401 Unauthorized');
-                exit;
-            } else {
-                //echo "<p>Hello {$_SERVER['PHP_AUTH_USER']}. Go to your <a href='profile.php'>Profile</a> </p>";
-
-                $username = $_SERVER['PHP_AUTH_USER'];
-                $password = $_SERVER['PHP_AUTH_PW'];
-
-                $this->loginHandlerProcess($userService, $username, $password);
-            }
-        } else if (isset($data['forgot_password'])) {
-
-            $this->redirect('forgottenPass.php');
+            exit;
         } else {
 
-            $this->render('users/login');
+            $username = $_SERVER['PHP_AUTH_USER'];
+            $password = $_SERVER['PHP_AUTH_PW'];
+
+            $this->loginHandlerProcess($userService, $username, $password);
         }
+
     }
 
     private function registerUserProcess(UserServiceInterface $userService, array $data)
@@ -220,7 +213,7 @@ class UserHttpHandler extends HttpHandlerAbstract
             if (mail("You@me.com", "Your Recovered Password", "Please use this password to login " . $password, "From: me@you.com")) {
                 echo "Your Password has been sent to " . $userEmail;
                 $userService->editPassword($currentUser, $password);
-                $this->redirect('register.php');
+                $this->redirect('login.php');
 
             } else {
                 echo "Failed to Recover your password, try again";

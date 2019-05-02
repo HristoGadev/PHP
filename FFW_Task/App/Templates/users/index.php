@@ -14,9 +14,7 @@
     <div class="topnav">
         <a class="left">Users Galeries</a>
         <a class="right"> <?php if (isset($_SESSION['id'])) {
-                echo$_SERVER['PHP_AUTH_USER'];
-
-
+               echo $_SERVER['PHP_AUTH_USER'];
             }
             ?></a>
 
@@ -40,6 +38,7 @@
 
 <div class="container signin"> <?php if (!isset($_SESSION['id'])) {
         echo ' <h4>Already have an account? <a href="login.php">Login</a>.</h4>';
+        echo ' <h4>If you forgot your password? <a href="forgottenPass.php">Forgotten Password</a>.</h4>';
         echo ' <h4>If you don`t have an account? <a href="register.php">Register</a>.</h4>';
     }
     ?>
