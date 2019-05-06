@@ -18,7 +18,7 @@
                     echo "Email: {$data->getEmail()}";
                 } ?></a>
 
-                <button  class="button" id="rcdown" >Back to main page</button>>
+                <a  href="logout.php" >Logout</a>>
 
 
         </div>
@@ -51,8 +51,7 @@
     } else {
         echo' <div class="container" style="width:500px;">';
 
-        echo '<h3 > Hello,if you want to see mine pictures please go to users gallery :). Have a nice day!</h3>';
-        echo '<button type="button" name="gallery" class="btn btn-primary"> Go to users galleries</button>';
+        echo '<h3 > Hello,if you want to see mine pictures please go to users gallery :). Have a nice day! <a href="index.php">Galleries</a>.</h4>';
         echo' </div>';
     }
     ?>
@@ -61,7 +60,4 @@
 
 <script>
    <?php include 'js/checkImage.js'?>
-</script>
-<script>
-    <?php include 'js/logout.js'?>
 </script>

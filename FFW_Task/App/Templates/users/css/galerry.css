@@ -3,35 +3,6 @@ body {
     font-family: 'Calibri';
 }
 
-main table {
-    width: 100%;
-    border: 1px solid #FEAE00;
-    border-spacing: 0px;
-}
-
-main th, td {
-    width: 25%;
-    padding: 15px;
-    text-align: left;
-}
-
-main td {
-    vertical-align: bottom;
-}
-
-main th {
-    background-color: #feae00;
-    color: white;
-}
-
-main table img {
-    width: 100px;
-    height: auto;
-}
-
-main tr:nth-child(odd) {
-    background-color: beige;
-}
 
 .topnav {
     background-color: #333;
@@ -83,8 +54,8 @@ main tr:nth-child(odd) {
 }
 
 #sortable li img {
-    width: 180px;
-    height: 140px;
+    width: 280px;
+    height: 180px;
 }
 .button {
     display: inline-block;

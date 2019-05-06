@@ -16,14 +16,14 @@ for ($i = 0; $i < $limit; $i++){
 
         ?>
         <li class="ui-sortable-handle" id="image_<?php echo $currentId; ?>" >
-            <img src="App/Templates/images/<?php echo $currentName ; ?>">
+            <img src="App/Templates/images/<?php echo $currentName ; ?>" width=555 height=555>
 
             <?php if (isset($_SESSION['id']) && $_SESSION['targetName'] == $_SERVER['PHP_AUTH_USER'])
 
                 echo "<label><input type='radio' name='optradio' value='Private' >Private</label>
                 <label><input type='radio' name='optradio' value='Public'>Public</label>
                 <label><input type='radio' name='optradio' value='Protected'>Protected</label>
-            <button type='submit' name='edit' value='$currentName'>Edit</button>
+            <button type='submit' name='edit' value='$currentName'>Edit visibility</button>
         </li>"?>
         <?php $startIndex++;
     }
@@ -31,6 +31,6 @@ for ($i = 0; $i < $limit; $i++){
 
 <?php if (isset($_SESSION['id']) && $_SESSION['targetName'] === $_SERVER['PHP_AUTH_USER']) {
     echo '<div style="clear: both; margin-top: 20px;">
-    <input type="button"   value="Submit" id="submit">
+    <input type="button"   value="Save reorder" id="submit">
 </div>';
 } ?>

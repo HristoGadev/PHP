@@ -74,9 +74,10 @@ class UserService implements UserServiceInterface
 
     public function editPassword(UserDTO $userDTO, string $password): void
     {
+        $userDTO->setPassword($password);
         $this->encryptPass($userDTO);
 
-        $this->userRepository->updateUser($userDTO->getId(), $password);
+        $this->userRepository->updateUser($userDTO->getId(), $userDTO->getPassword());
 
     }
 

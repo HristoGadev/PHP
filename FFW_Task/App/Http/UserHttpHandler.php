@@ -82,6 +82,7 @@ class UserHttpHandler extends HttpHandlerAbstract
 
 
             $this->redirect('gallery.php');
+
         } else if (isset($data['profile'])) {
 
             $user = $data['profile'];
@@ -121,7 +122,7 @@ class UserHttpHandler extends HttpHandlerAbstract
             header('WWW-Authenticate:Basic realm=Enter user/userpass as login and password');
             header('HTTP/1.0 401 Unauthorized');
 
-            exit;
+            die();
         } else {
 
             $username = $_SERVER['PHP_AUTH_USER'];
@@ -140,7 +141,7 @@ class UserHttpHandler extends HttpHandlerAbstract
 
             $this->redirect('profile.php');
         } else {
-            $this->render("users/login");
+            $this->render("users/register");
         }
     }
 
@@ -158,7 +159,7 @@ class UserHttpHandler extends HttpHandlerAbstract
         } else {
             header('WWW-Authenticate: Basic realm="My Realm"');
             header('HTTP/1.0 401 Unauthorized');
-            $this->render("users/login");
+            $this->render("users/index");
         }
         return $currentUser;
     }
@@ -171,8 +172,12 @@ class UserHttpHandler extends HttpHandlerAbstract
 
         if (isset($data['insert'])) {
 
+            $uploads_dir='App/Templates/images';
 
             $name = $_FILES["image"]["name"];
+            $tmp_name = $_FILES["image"]["tmp_name"];
+            move_uploaded_file($tmp_name, "$uploads_dir/$name");
+
 
             if ($name != null) {
 
@@ -193,6 +198,7 @@ class UserHttpHandler extends HttpHandlerAbstract
         }
 
         if ($currentUser == null) {
+
             $this->redirect('login.php');
         } else {
             $this->render('users/profile', $currentUser);
