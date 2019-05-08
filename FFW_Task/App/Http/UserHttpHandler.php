@@ -21,7 +21,7 @@ class UserHttpHandler extends HttpHandlerAbstract
     {
             session_destroy();
             header('HTTP/1.1 401 Unauthorized');
-            die('You successfully logOut ');
+            die('You successfully logout! ');
     }
 
     public function reorderPictures(UserServiceInterface $userService, $data = [])
@@ -115,20 +115,25 @@ class UserHttpHandler extends HttpHandlerAbstract
 
     }
 
-    public function loginUser(UserServiceInterface $userService)
+    public function loginUser(UserServiceInterface $userService,$data=[])
     {
+        $this->render('users/login');
+        if(isset($data["login"])){
+            if (!isset($_SERVER['PHP_AUTH_USER'])) {
+                header('WWW-Authenticate:Basic realm=Enter user/userpass as login and password');
+                header('HTTP/1.0 401 Unauthorized');
 
-        if (!isset($_SERVER['PHP_AUTH_USER'])) {
-            header('WWW-Authenticate:Basic realm=Enter user/userpass as login and password');
-            header('HTTP/1.0 401 Unauthorized');
+                die('Please enter username and password');
+            } else {
 
-            die();
-        } else {
+                $username = $_SERVER['PHP_AUTH_USER'];
+                $password = $_SERVER['PHP_AUTH_PW'];
 
-            $username = $_SERVER['PHP_AUTH_USER'];
-            $password = $_SERVER['PHP_AUTH_PW'];
+                $this->loginHandlerProcess($userService, $username, $password);
+            }
 
-            $this->loginHandlerProcess($userService, $username, $password);
+        }else if(isset($data["pass"])){
+            $this->redirect("forgottenPass.php");
         }
 
     }
@@ -139,7 +144,7 @@ class UserHttpHandler extends HttpHandlerAbstract
 
         if ($userService->register($user)) {
 
-            $this->redirect('profile.php');
+            $this->redirect('login.php');
         } else {
             $this->render("users/register");
         }

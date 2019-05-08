@@ -14,15 +14,15 @@ class DataBinder implements DataBinderInterface
 
     public function bind($form, $className)
     {
-       $classInfo=new \ReflectionClass($className);
-       $object=new $className;
-       foreach ($form as $key=>$value){
-            if($classInfo->hasProperty($key)){
-                $property=$classInfo->getProperty($key);
+        $classInfo = new \ReflectionClass($className);
+        $object = new $className;
+        foreach ($form as $key => $value) {
+            if ($classInfo->hasProperty($key)) {
+                $property = $classInfo->getProperty($key);
                 $property->setAccessible(true);
-                $property->setValue($object,$value);
+                $property->setValue($object, $value);
             }
-       }
-       return $object;
+        }
+        return $object;
     }
 }

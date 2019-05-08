@@ -2,4 +2,4 @@
 
 require_once "commonUser.php";
 
-$userHttpHandler->loginUser($userService);
+$userHttpHandler->loginUser($userService,$_POST);
